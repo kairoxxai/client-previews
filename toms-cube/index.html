@@ -589,168 +589,6 @@
     border-radius: 12px;
   }
 
-  /* ── FEATURE 2: IMPORT MODAL ── */
-  .import-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.88);
-    z-index: 3000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-    backdrop-filter: blur(4px);
-    padding: 20px;
-  }
-  .import-overlay.open { opacity: 1; pointer-events: all; }
-
-  .import-modal {
-    background: var(--surface);
-    border: 1px solid var(--gold);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 640px;
-    max-height: 90vh;
-    overflow-y: auto;
-    box-shadow: 0 0 60px rgba(201,168,76,0.15), 0 32px 80px rgba(0,0,0,0.9);
-    transform: translateY(20px) scale(0.97);
-    transition: transform 0.3s ease;
-  }
-  .import-overlay.open .import-modal { transform: translateY(0) scale(1); }
-
-  .import-modal-header {
-    padding: 24px 28px 20px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .import-modal-title { font-family: 'Cinzel Decorative', serif; font-size: 16px; color: var(--gold); }
-
-  .import-modal-body { padding: 24px 28px; }
-
-  .import-format-hint {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
-    line-height: 1.7;
-  }
-  .import-format-hint .hint-gold { color: var(--gold); }
-
-  .import-textarea {
-    width: 100%;
-    height: 260px;
-    background: rgba(0,0,0,0.3);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    padding: 14px 16px;
-    resize: vertical;
-    outline: none;
-    transition: border-color 0.2s;
-    line-height: 1.6;
-  }
-  .import-textarea:focus { border-color: var(--gold); }
-  .import-textarea::placeholder { color: var(--muted); }
-
-  .import-progress-wrap { margin-top: 16px; display: none; }
-  .import-progress-wrap.visible { display: block; }
-
-  .import-progress-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    margin-bottom: 6px;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .import-progress-track {
-    width: 100%;
-    height: 6px;
-    background: var(--border);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-
-  .import-progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #8b6914, var(--gold), #f5e6c8);
-    width: 0%;
-    transition: width 0.15s ease;
-    border-radius: 3px;
-  }
-
-  .import-failed-list {
-    margin-top: 14px;
-    display: none;
-  }
-  .import-failed-list.visible { display: block; }
-  .import-failed-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #e87070;
-    margin-bottom: 6px;
-  }
-  .import-failed-cards {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    background: rgba(200,50,50,0.06);
-    border: 1px solid rgba(200,50,50,0.2);
-    border-radius: 4px;
-    padding: 10px 12px;
-    max-height: 120px;
-    overflow-y: auto;
-    line-height: 1.8;
-  }
-
-  .import-modal-footer {
-    padding: 16px 28px 24px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    gap: 12px;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .import-submit-btn {
-    background: linear-gradient(135deg, #1a1228, #2a1a3e);
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    padding: 11px 28px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: box-shadow 0.2s, transform 0.15s;
-  }
-  .import-submit-btn:hover { box-shadow: 0 0 16px rgba(201,168,76,0.25); transform: translateY(-1px); }
-  .import-submit-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
-
-  .import-cancel-btn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    padding: 11px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .import-cancel-btn:hover { border-color: var(--muted); color: var(--text); }
-
   /* ── FEATURE 3: ARCHETYPE SECTION HEADERS (imported view) ── */
   .arch-section { margin-bottom: 52px; }
 
@@ -841,9 +679,6 @@
     <button class="open-pack-btn" id="open-pack-btn">
       <span class="pack-icon">✦</span> Open a Pack <span class="pack-icon">✦</span>
     </button>
-    <button class="import-cube-btn" id="import-cube-btn">
-      ◈ Import Cube List
-    </button>
   </div>
 
   <div class="search-wrap">
@@ -886,6 +721,10 @@
     <button class="tab" data-tab="curve">
       <span style="color:#c9a84c">▲</span> Curve
     </button>
+  </div>
+
+  <div id="panel-search" class="panel" style="display:none">
+    <div id="search-results-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;padding:4px 0 32px;"></div>
   </div>
 
   <div id="panel-overview" class="panel active">
@@ -938,47 +777,6 @@
   </div>
 </div>
 
-<!-- IMPORT MODAL -->
-<div class="import-overlay" id="import-overlay">
-  <div class="import-modal">
-    <div class="import-modal-header">
-      <div class="import-modal-title">◈ Import Cube List</div>
-      <button class="pack-close" id="import-close-btn">✕</button>
-    </div>
-    <div class="import-modal-body">
-      <div class="import-format-hint">
-        <span class="hint-gold"># Archetype Name</span> — defines an archetype section<br>
-        <span class="hint-gold">Card Name</span> or <span class="hint-gold">1x Card Name</span> — adds a card to the current section<br>
-        Cards before any <span class="hint-gold">#</span> header go into <em>Unsorted</em>. No headers = plain list, color-sorted view.
-      </div>
-      <textarea
-        class="import-textarea"
-        id="import-textarea"
-        placeholder="# Aggro Red&#10;Lightning Bolt&#10;Goblin Guide&#10;&#10;# Control Blue&#10;Counterspell&#10;Brainstorm&#10;&#10;Sol Ring"
-        spellcheck="false"
-      ></textarea>
-
-      <div class="import-progress-wrap" id="import-progress-wrap">
-        <div class="import-progress-label">
-          <span id="import-progress-text">Fetching cards from Scryfall…</span>
-          <span id="import-progress-nums">0 / 0</span>
-        </div>
-        <div class="import-progress-track">
-          <div class="import-progress-bar" id="import-progress-bar"></div>
-        </div>
-      </div>
-
-      <div class="import-failed-list" id="import-failed-list">
-        <div class="import-failed-label">⚠ Cards not found on Scryfall:</div>
-        <div class="import-failed-cards" id="import-failed-cards"></div>
-      </div>
-    </div>
-    <div class="import-modal-footer">
-      <button class="import-cancel-btn" id="import-cancel-btn">Cancel</button>
-      <button class="import-submit-btn" id="import-submit-btn">✦ Import</button>
-    </div>
-  </div>
-</div>
 
 <!-- TOOLTIP (image-based) -->
 <div class="tooltip" id="tooltip">
@@ -1541,254 +1339,7 @@ function escapeHtml(str) {
   return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-// ===================== FEATURE 2: IMPORT PARSER =====================
-function parseImportText(raw) {
-  // Returns { archetypes: [{name, cardNames:[]}], hasArchetypes: bool }
-  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
-  const archetypes = [];
-  let current = null;
-  let hasArchetypes = false;
-
-  lines.forEach(line => {
-    if (line.startsWith('#')) {
-      hasArchetypes = true;
-      const name = line.slice(1).trim() || 'Untitled';
-      current = { name, cardNames: [] };
-      archetypes.push(current);
-    } else {
-      // Strip leading count like "1x " or "2 "
-      const cardName = line.replace(/^\d+x?\s+/i, '').trim();
-      if (!cardName) return;
-      if (!current) {
-        // Cards before any header → Unsorted
-        current = { name: 'Unsorted', cardNames: [] };
-        archetypes.push(current);
-      }
-      current.cardNames.push(cardName);
-    }
-  });
-
-  // Deduplicate card names within each archetype
-  archetypes.forEach(a => {
-    a.cardNames = [...new Set(a.cardNames)];
-  });
-
-  return { archetypes, hasArchetypes };
-}
-
-// ===================== IMPORT MODAL LOGIC =====================
-const importOverlay  = document.getElementById('import-overlay');
-const importTextarea = document.getElementById('import-textarea');
-const importSubmit   = document.getElementById('import-submit-btn');
-const importProgress = document.getElementById('import-progress-wrap');
-const importProgBar  = document.getElementById('import-progress-bar');
-const importProgText = document.getElementById('import-progress-text');
-const importProgNums = document.getElementById('import-progress-nums');
-const importFailed   = document.getElementById('import-failed-list');
-const importFailCards= document.getElementById('import-failed-cards');
-
-function openImportModal() {
-  importOverlay.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  importProgress.classList.remove('visible');
-  importFailed.classList.remove('visible');
-  importSubmit.disabled = false;
-  importProgBar.style.width = '0%';
-}
-
-function closeImportModal() {
-  importOverlay.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-document.getElementById('import-cube-btn').addEventListener('click', openImportModal);
-document.getElementById('import-close-btn').addEventListener('click', closeImportModal);
-document.getElementById('import-cancel-btn').addEventListener('click', closeImportModal);
-importOverlay.addEventListener('click', e => { if (e.target === importOverlay) closeImportModal(); });
-
-importSubmit.addEventListener('click', async () => {
-  const raw = importTextarea.value.trim();
-  if (!raw) return;
-
-  importSubmit.disabled = true;
-  importProgress.classList.add('visible');
-  importFailed.classList.remove('visible');
-  importProgBar.style.width = '0%';
-  importProgText.textContent = 'Fetching cards from Scryfall…';
-
-  const { archetypes, hasArchetypes } = parseImportText(raw);
-
-  // Collect all unique card names
-  const allNames = [];
-  archetypes.forEach(a => a.cardNames.forEach(n => { if (!allNames.includes(n)) allNames.push(n); }));
-
-  const total = allNames.length;
-  let done = 0;
-  const failed = [];
-
-  importProgNums.textContent = `0 / ${total}`;
-
-  // Fetch all cards sequentially (rate-limited via queue)
-  const fetchPromises = allNames.map(name =>
-    fetchCard(name).then(data => {
-      done++;
-      importProgBar.style.width = Math.round((done / total) * 100) + '%';
-      importProgNums.textContent = `${done} / ${total}`;
-      if (!data) failed.push(name);
-      return { name, data };
-    })
-  );
-
-  await Promise.all(fetchPromises);
-
-  importProgText.textContent = `Done — ${total - failed.length} of ${total} cards found`;
-
-  if (failed.length > 0) {
-    importFailed.classList.add('visible');
-    importFailCards.textContent = failed.join('\n');
-  }
-
-  // Build result: archetypes with resolved card data
-  const resolvedArchetypes = archetypes.map(arch => ({
-    name: arch.name,
-    cards: arch.cardNames
-      .filter(n => cardCache.get(n.toLowerCase()))
-      .map(n => {
-        const d = cardCache.get(n.toLowerCase());
-        return {
-          name: d.name || n,
-          cmc: d.cmc || 0,
-          colorIdentity: d.colorIdentity || [],
-          typeLine: d.typeLine || '',
-          imageUrl: d.imageUrl || null,
-        };
-      }),
-  })).filter(a => a.cards.length > 0);
-
-  // Rebuild the view
-  rebuildWithImportedData(resolvedArchetypes, hasArchetypes, total - failed.length);
-
-  // Close modal after a beat
-  setTimeout(() => {
-    closeImportModal();
-    importSubmit.disabled = false;
-  }, 800);
-});
-
-function rebuildWithImportedData(archetypes, hasArchetypes, cardCount) {
-  // Clear existing allCards tracking (keep existing hardcoded cards in pack pool)
-  allCards = [];
-
-  // Clear color panels
-  ['white','blue','black','red','green','multicolor','artifacts','lands'].forEach(p => {
-    document.getElementById('panel-' + p).innerHTML = '';
-  });
-
-  // Group all imported cards by color identity for the color tabs
-  const byColor = { w:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, u:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, b:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, r:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, g:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, gold:[], artifact:[], land:[] };
-  const colorAccentMap = { w:'#e8d8b0', u:'#5ab4e8', b:'#9060d0', r:'#e86060', g:'#60cc80' };
-
-  const allImportedCards = [];
-  archetypes.forEach(a => a.cards.forEach(c => {
-    if (!allImportedCards.find(x => x.name === c.name)) allImportedCards.push(c);
-  }));
-
-  allImportedCards.forEach(card => {
-    const ci = card.colorIdentity;
-    const isLand = card.typeLine.toLowerCase().includes('land');
-    const bucket = card.cmc >= 6 ? '6+' : (String(Math.floor(card.cmc)) || '0');
-
-    if (isLand) {
-      byColor.land.push(card.name);
-    } else if (ci.length === 0) {
-      byColor.artifact[bucket] = byColor.artifact[bucket] || [];
-      byColor.artifact[bucket].push(card.name);
-    } else if (ci.length > 1) {
-      byColor.gold.push(card.name);
-    } else {
-      const c = ci[0].toLowerCase();
-      if (byColor[c]) {
-        byColor[c][bucket] = byColor[c][bucket] || [];
-        byColor[c][bucket].push(card.name);
-      }
-    }
-  });
-
-  // Render mono-color panels
-  ['w','u','b','r','g'].forEach(ck => {
-    const panelMap = { w:'panel-white', u:'panel-blue', b:'panel-black', r:'panel-red', g:'panel-green' };
-    const panel = document.getElementById(panelMap[ck]);
-    const hdr = document.createElement('div');
-    hdr.className = 'section-header';
-    hdr.innerHTML = `<div class="section-title" style="color:${colorAccentMap[ck]}">Cards</div><div class="section-line"></div>`;
-    panel.appendChild(hdr);
-    const { section, cards: newCards } = buildCMCSection(byColor[ck], ck);
-    panel.appendChild(section);
-    allCards.push(...newCards);
-  });
-
-  // Multicolor panel
-  const mcPanel = document.getElementById('panel-multicolor');
-  const mcSection = document.createElement('div');
-  mcSection.className = 'color-section';
-  const mcHdr = document.createElement('div');
-  mcHdr.className = 'section-header';
-  mcHdr.innerHTML = `<div class="section-title" style="color:var(--gold)">Multicolor</div><div class="section-line"></div>`;
-  mcSection.appendChild(mcHdr);
-  const mcBody = document.createElement('div');
-  mcBody.className = 'cmc-cards tint-gold';
-  byColor.gold.forEach(name => {
-    const pill = makeCard(name);
-    mcBody.appendChild(pill);
-    allCards.push(pill);
-  });
-  mcSection.appendChild(mcBody);
-  mcPanel.appendChild(mcSection);
-
-  // Artifacts panel
-  const artPanel = document.getElementById('panel-artifacts');
-  const artData = {};
-  Object.entries(byColor.artifact).forEach(([k,v]) => { if (v && v.length) artData[k] = v; });
-  const { section: artSection, cards: artCards } = buildCMCSection(artData, 'artifact');
-  artPanel.appendChild(artSection);
-  allCards.push(...artCards);
-
-  // Lands panel
-  const landsPanel = document.getElementById('panel-lands');
-  const landsSection = document.createElement('div');
-  landsSection.className = 'color-section';
-  const landsBody = document.createElement('div');
-  landsBody.className = 'cmc-cards tint-land';
-  byColor.land.forEach(name => {
-    const pill = makeCard(name);
-    landsBody.appendChild(pill);
-    allCards.push(pill);
-  });
-  landsSection.appendChild(landsBody);
-  landsPanel.appendChild(landsSection);
-
-  // Archetypes panel
-  if (hasArchetypes) {
-    renderImportedArchetypes(archetypes);
-    // Badge the tab
-    const archTab = document.querySelector('.tab[data-tab="archetypes"]');
-    if (archTab && !archTab.querySelector('.tab-badge')) {
-      const badge = document.createElement('span');
-      badge.className = 'tab-badge';
-      badge.textContent = 'IMPORTED';
-      archTab.appendChild(badge);
-    }
-    document.getElementById('arch-count').textContent = archetypes.length;
-  } else {
-    renderArchetypes();
-  }
-
-  // Update total count
-  document.getElementById('total-count').textContent = cardCount;
-
-  // Switch to archetypes tab if they were defined, else overview
-  switchTab(hasArchetypes ? 'archetypes' : 'overview');
-}
+// ===================== INIT =====================
 
 // ===================== INIT =====================
 renderColor('white',  'panel-white');
@@ -1832,29 +1383,58 @@ document.querySelectorAll('.tab').forEach(tab => {
 // ===================== SEARCH =====================
 const searchInput = document.getElementById('search');
 const searchCount = document.getElementById('search-count');
+const searchPanel = document.getElementById('panel-search');
+const searchGrid  = document.getElementById('search-results-grid');
+let savedTab = 'overview';
 
 function clearSearch() {
   searchInput.value = '';
-  allCards.forEach(c => c.classList.remove('match','no-match'));
   searchCount.textContent = '';
+  searchGrid.innerHTML = '';
+  searchPanel.style.display = 'none';
+  document.querySelectorAll('.panel').forEach(p => p.style.display = '');
+  document.getElementById('panel-' + savedTab).classList.add('active');
 }
+
+searchInput.addEventListener('focus', () => {
+  const activeTab = document.querySelector('.tab.active');
+  if (activeTab) savedTab = activeTab.dataset.tab || 'overview';
+});
 
 searchInput.addEventListener('input', () => {
   const q = searchInput.value.trim().toLowerCase();
   if (!q) { clearSearch(); return; }
 
-  document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
-  document.getElementById('panel-overview').style.display = 'block';
+  // Hide all panels, show search panel
+  document.querySelectorAll('.panel').forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
+  searchPanel.style.display = 'block';
+  searchGrid.innerHTML = '';
 
   let matches = 0;
-  allCards.forEach(c => {
-    if (c.dataset.name.includes(q)) {
-      c.classList.add('match'); c.classList.remove('no-match'); matches++;
-    } else {
-      c.classList.remove('match'); c.classList.add('no-match');
-    }
+  allCards.forEach(src => {
+    if (!src.dataset.name.includes(q)) return;
+    matches++;
+    const name = src.textContent.trim();
+    const pill = document.createElement('a');
+    pill.className = 'card-pill';
+    pill.href = `https://scryfall.com/search?q=${encodeURIComponent(name)}`;
+    pill.target = '_blank'; pill.rel = 'noopener';
+    pill.textContent = name;
+    pill.dataset.name = name;
+    pill.addEventListener('mouseenter', showTooltip);
+    pill.addEventListener('mouseleave', hideTooltip);
+    pill.addEventListener('mousemove', moveTooltip);
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:6px 8px;';
+    wrap.appendChild(pill);
+    searchGrid.appendChild(wrap);
   });
-  searchCount.textContent = `${matches} card${matches !== 1 ? 's' : ''} found`;
+
+  searchCount.textContent = matches ? `${matches} card${matches !== 1 ? 's' : ''} found` : 'No cards found';
+});
+
+searchInput.addEventListener('keydown', e => {
+  if (e.key === 'Escape') clearSearch();
 });
 
 // ===================== PACK SIMULATOR =====================
