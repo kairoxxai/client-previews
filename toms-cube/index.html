@@ -629,6 +629,169 @@
   /* Highlight for search */
   .card-pill.match { background: rgba(201,168,76,0.06); }
   .card-pill.no-match { opacity: 0.2; }
+
+  /* PACK BUTTON */
+  .pack-btn-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 32px;
+    animation: fadeUp 0.8s 0.6s ease both;
+    flex-wrap: wrap;
+  }
+
+  .open-pack-btn {
+    background: linear-gradient(135deg, #1a1228, #2a1a3e);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    padding: 14px 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .open-pack-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .open-pack-btn:hover {
+    box-shadow: 0 0 24px rgba(201,168,76,0.25), 0 0 48px rgba(201,168,76,0.1);
+    transform: translateY(-1px);
+  }
+  .open-pack-btn:hover::before { opacity: 1; }
+  .open-pack-btn:active { transform: translateY(1px); }
+  .pack-icon { font-size: 20px; }
+
+  /* PACK MODAL */
+  .pack-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+  }
+  .pack-overlay.open { opacity: 1; pointer-events: all; }
+
+  .pack-modal {
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 60px rgba(201,168,76,0.15), 0 32px 80px rgba(0,0,0,0.8);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.3s ease;
+  }
+  .pack-overlay.open .pack-modal { transform: translateY(0) scale(1); }
+
+  .pack-modal-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .pack-modal-title { font-family: 'Cinzel Decorative', serif; font-size: 16px; color: var(--gold); display: flex; align-items: center; gap: 10px; }
+
+  .pack-close {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .pack-close:hover { border-color: var(--gold); color: var(--gold); }
+
+  .pack-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 20px 24px; }
+  @media (max-width: 500px) { .pack-cards-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .pack-card-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, border-color 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .pack-card-item:hover { border-color: var(--gold); background: rgba(201,168,76,0.04); }
+  .pack-card-item.revealed { opacity: 1; transform: translateY(0); }
+
+  .pack-card-name { font-family: 'Crimson Pro', serif; font-size: 15px; color: var(--text); line-height: 1.3; }
+  .pack-card-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .pack-card-color-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  .pack-modal-footer { padding: 16px 24px 24px; border-top: 1px solid var(--border); display: flex; gap: 12px; justify-content: center; }
+
+  .pack-again-btn {
+    background: linear-gradient(135deg, #1a1228, #2a1a3e);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .pack-again-btn:hover { box-shadow: 0 0 16px rgba(201,168,76,0.2); transform: translateY(-1px); }
+
+  .pack-dismiss-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    padding: 10px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .pack-dismiss-btn:hover { border-color: var(--muted); color: var(--text); }
+
+  .pack-count-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
 </style>
 </head>
 <body>
@@ -657,6 +820,12 @@
     <div class="stat"><div class="stat-num">10</div><div class="stat-label">Archetypes</div></div>
     <div class="stat-divider"></div>
     <div class="stat"><div class="stat-num">8</div><div class="stat-label">Draft Seats</div></div>
+  </div>
+
+  <div class="pack-btn-wrap">
+    <button class="open-pack-btn" id="open-pack-btn">
+      <span class="pack-icon">✦</span> Open a Pack <span class="pack-icon">✦</span>
+    </button>
   </div>
 
   <div class="search-wrap">
@@ -1297,13 +1466,115 @@ searchInput.addEventListener('input', () => {
 searchInput.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     clearSearch();
-    // Restore active panel
     document.querySelectorAll('.panel').forEach(p => p.style.display='');
     const active = document.querySelector('.tab.active');
     const name = active?.getAttribute('onclick')?.match(/'(\w+)'/)?.[1] || 'overview';
     document.getElementById('panel-'+name).style.display='block';
   }
 });
+
+// ===================== PACK SIMULATOR =====================
+const colorDotMap   = { w:'#e8d8b0', u:'#5ab4e8', b:'#9060d0', r:'#e86060', g:'#60cc80', gold:'#c9a84c', artifact:'#8a9bb0', land:'#8b6930' };
+const colorLabelMap = { w:'White', u:'Blue', b:'Black', r:'Red', g:'Green', gold:'Multicolor', artifact:'Artifact', land:'Land' };
+
+const PACK_MIN_CARDS = 45;
+
+function buildFullCardPool() {
+  const pool = [];
+  Object.values(CUBE).forEach(data => {
+    const ck = data.color;
+    Object.values(data.creatures || {}).forEach(arr => arr.forEach(name => pool.push({ name, color: ck })));
+    Object.values(data.spells    || {}).forEach(arr => arr.forEach(name => pool.push({ name, color: ck })));
+  });
+  Object.values(MULTICOLOR).forEach(guild => guild.cards.forEach(name => pool.push({ name, color: 'gold' })));
+  Object.values(ARTIFACTS).forEach(arr => arr.forEach(name => pool.push({ name, color: 'artifact' })));
+  Object.values(LANDS).forEach(arr => arr.forEach(name => pool.push({ name, color: 'land' })));
+  return pool;
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+let packOpenCount = 0;
+
+function openPack() {
+  const pool = buildFullCardPool();
+  if (pool.length < PACK_MIN_CARDS) {
+    document.getElementById('pack-cards-grid').innerHTML = `
+      <div style="grid-column:1/-1;text-align:center;padding:40px 20px;">
+        <div style="font-family:'Cinzel Decorative',serif;font-size:16px;color:var(--gold);margin-bottom:12px;">Not Enough Cards</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);line-height:1.8;">
+          Need at least <strong style="color:var(--text)">${PACK_MIN_CARDS}</strong> cards.
+        </div>
+      </div>`;
+    document.getElementById('pack-count-badge').textContent = 'Not enough cards';
+    document.getElementById('pack-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    return;
+  }
+  packOpenCount++;
+  const pack = shuffle(pool).slice(0, 15);
+  const grid = document.getElementById('pack-cards-grid');
+  grid.innerHTML = '';
+  pack.forEach((card, i) => {
+    const item = document.createElement('a');
+    item.className = 'pack-card-item';
+    item.href = `https://scryfall.com/search?q=${encodeURIComponent(card.name)}`;
+    item.target = '_blank'; item.rel = 'noopener';
+    item.innerHTML = `
+      <div class="pack-card-name">${card.name}</div>
+      <div class="pack-card-meta">
+        <div class="pack-card-color-dot" style="background:${colorDotMap[card.color] || '#888'}"></div>
+        ${colorLabelMap[card.color] || card.color}
+      </div>`;
+    grid.appendChild(item);
+    setTimeout(() => item.classList.add('revealed'), i * 60);
+  });
+  document.getElementById('pack-count-badge').textContent = `Pack #${packOpenCount}`;
+  document.getElementById('pack-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePack() {
+  document.getElementById('pack-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('open-pack-btn').addEventListener('click', openPack);
+document.getElementById('pack-close-btn').addEventListener('click', closePack);
+document.getElementById('pack-again-btn').addEventListener('click', openPack);
+document.getElementById('pack-dismiss-btn').addEventListener('click', closePack);
+document.getElementById('pack-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('pack-overlay')) closePack();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && document.getElementById('pack-overlay').classList.contains('open')) closePack();
+});
 </script>
+
+<!-- PACK MODAL -->
+<div class="pack-overlay" id="pack-overlay">
+  <div class="pack-modal" id="pack-modal">
+    <div class="pack-modal-header">
+      <div class="pack-modal-title">
+        ✦ Sample Pack
+        <span class="pack-count-badge" id="pack-count-badge">15 cards</span>
+      </div>
+      <button class="pack-close" id="pack-close-btn">✕</button>
+    </div>
+    <div class="pack-cards-grid" id="pack-cards-grid"></div>
+    <div class="pack-modal-footer">
+      <button class="pack-again-btn" id="pack-again-btn">✦ Open Another Pack</button>
+      <button class="pack-dismiss-btn" id="pack-dismiss-btn">Close</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
