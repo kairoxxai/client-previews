@@ -33,7 +33,6 @@
     overflow-x: hidden;
   }
 
-  /* Starfield background */
   body::before {
     content: '';
     position: fixed;
@@ -50,7 +49,6 @@
     z-index: 0;
   }
 
-  /* Vignette */
   body::after {
     content: '';
     position: fixed;
@@ -62,7 +60,6 @@
 
   .container { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 0 24px; }
 
-  /* HEADER */
   header {
     text-align: center;
     padding: 64px 24px 40px;
@@ -132,7 +129,6 @@
     animation: fadeDown 0.8s 0.3s ease both;
   }
 
-  /* STATS BAR */
   .stats-bar {
     display: flex;
     justify-content: center;
@@ -145,34 +141,11 @@
     flex-wrap: wrap;
   }
 
-  .stat {
-    text-align: center;
-    min-width: 80px;
-  }
+  .stat { text-align: center; min-width: 80px; }
+  .stat-num { font-family: 'Cinzel Decorative', serif; font-size: 28px; color: var(--gold); line-height: 1; }
+  .stat-label { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-top: 4px; font-family: 'JetBrains Mono', monospace; }
+  .stat-divider { width: 1px; background: var(--border); align-self: stretch; }
 
-  .stat-num {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 28px;
-    color: var(--gold);
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 4px;
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  .stat-divider {
-    width: 1px;
-    background: var(--border);
-    align-self: stretch;
-  }
-
-  /* SEARCH */
   .search-wrap {
     margin: 0 auto 32px;
     max-width: 500px;
@@ -218,7 +191,6 @@
     transition: opacity 0.2s;
   }
 
-  /* TABS */
   .tabs {
     display: flex;
     gap: 0;
@@ -228,7 +200,6 @@
     animation: fadeUp 0.8s 0.5s ease both;
     scrollbar-width: none;
   }
-
   .tabs::-webkit-scrollbar { display: none; }
 
   .tab {
@@ -251,40 +222,16 @@
     align-items: center;
     gap: 8px;
   }
-
   .tab:hover { color: var(--text); }
+  .tab.active { color: var(--gold); border-bottom-color: var(--gold); }
 
-  .tab.active {
-    color: var(--gold);
-    border-bottom-color: var(--gold);
-  }
+  .tab-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
 
-  .tab-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-  }
+  .color-section { margin-bottom: 48px; animation: fadeUp 0.5s ease both; }
 
-  /* COLOR SECTIONS */
-  .color-section {
-    margin-bottom: 48px;
-    animation: fadeUp 0.5s ease both;
-  }
+  .section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
 
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 20px;
-  }
-
-  .section-title {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 18px;
-    letter-spacing: 0.08em;
-    color: var(--text);
-  }
+  .section-title { font-family: 'Cinzel Decorative', serif; font-size: 18px; letter-spacing: 0.08em; color: var(--text); }
 
   .section-count {
     font-family: 'JetBrains Mono', monospace;
@@ -295,33 +242,17 @@
     border-radius: 12px;
   }
 
-  .section-line {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, var(--border), transparent);
-  }
+  .section-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
 
-  /* CMC LANES */
   .cmc-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 2px;
   }
+  @media (max-width: 900px) { .cmc-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 600px) { .cmc-grid { grid-template-columns: repeat(2, 1fr); } }
 
-  @media (max-width: 900px) {
-    .cmc-grid { grid-template-columns: repeat(4, 1fr); }
-  }
-
-  @media (max-width: 600px) {
-    .cmc-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  .cmc-col {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-  }
+  .cmc-col { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
 
   .cmc-header {
     padding: 8px 12px;
@@ -336,7 +267,6 @@
 
   .cmc-num { font-weight: 700; }
   .cmc-total { opacity: 0.5; }
-
   .cmc-cards { padding: 8px; }
 
   .card-pill {
@@ -364,7 +294,6 @@
 
   .card-pill.hidden { display: none; }
 
-  /* Color tints for cards */
   .tint-w .card-pill { border-left: 2px solid rgba(232,216,176,0.4); }
   .tint-u .card-pill { border-left: 2px solid rgba(26,107,154,0.6); }
   .tint-b .card-pill { border-left: 2px solid rgba(100,40,160,0.5); }
@@ -374,7 +303,6 @@
   .tint-artifact .card-pill { border-left: 2px solid rgba(138,155,176,0.5); }
   .tint-land .card-pill { border-left: 2px solid rgba(120,90,40,0.5); }
 
-  /* Color header accents */
   .color-w .cmc-header { background: rgba(232,216,176,0.06); }
   .color-u .cmc-header { background: rgba(26,107,154,0.1); }
   .color-b .cmc-header { background: rgba(60,20,100,0.1); }
@@ -384,25 +312,16 @@
   .color-artifact .cmc-header { background: rgba(138,155,176,0.08); }
   .color-land .cmc-header { background: rgba(92,74,42,0.1); }
 
-  /* GUILD GRID */
   .guild-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 12px;
     margin-bottom: 12px;
   }
-
   @media (max-width: 900px) { .guild-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 600px) { .guild-grid { grid-template-columns: repeat(2, 1fr); } }
 
-  .guild-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    overflow: hidden;
-    transition: border-color 0.2s;
-  }
-
+  .guild-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; transition: border-color 0.2s; }
   .guild-card:hover { border-color: var(--gold); }
 
   .guild-header {
@@ -416,29 +335,12 @@
     gap: 8px;
   }
 
-  .guild-pips {
-    display: flex;
-    gap: 3px;
-  }
-
-  .pip {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-  }
-
+  .guild-pips { display: flex; gap: 3px; }
+  .pip { width: 10px; height: 10px; border-radius: 50%; }
   .guild-body { padding: 8px 12px; }
+  .guild-body .card-pill { font-size: 13px; padding: 4px 6px; }
 
-  .guild-body .card-pill {
-    font-size: 13px;
-    padding: 4px 6px;
-  }
-
-  /* ARCHETYPES */
-  .archetype-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 16px;
-  }
+  .archetype-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
 
   .archetype-card {
     background: var(--surface);
@@ -449,176 +351,65 @@
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s;
   }
+  .archetype-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .archetype-card:hover { border-color: var(--gold); transform: translateY(-2px); }
 
-  .archetype-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-  }
+  .archetype-name { font-family: 'Cinzel Decorative', serif; font-size: 14px; color: var(--gold); margin-bottom: 6px; }
+  .archetype-guild { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; }
+  .archetype-desc { font-size: 15px; line-height: 1.5; color: #c8bca8; font-style: italic; }
+  .archetype-keys { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .key-tag { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2); padding: 2px 8px; border-radius: 12px; font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--gold); }
 
-  .archetype-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-2px);
-  }
+  .curve-section { margin-bottom: 48px; }
+  .curve-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
 
-  .archetype-name {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 14px;
-    color: var(--gold);
-    margin-bottom: 6px;
-  }
+  .curve-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 16px; }
+  .curve-title { font-family: 'Cinzel Decorative', serif; font-size: 13px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .curve-bars { display: flex; align-items: flex-end; gap: 4px; height: 60px; }
+  .curve-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; height: 100%; justify-content: flex-end; }
+  .curve-bar { width: 100%; border-radius: 2px 2px 0 0; min-height: 2px; transition: height 0.4s ease; position: relative; }
+  .curve-bar-num { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); }
+  .curve-label { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); margin-top: 4px; }
 
-  .archetype-guild {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--muted);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-  }
-
-  .archetype-desc {
-    font-size: 15px;
-    line-height: 1.5;
-    color: #c8bca8;
-    font-style: italic;
-  }
-
-  .archetype-keys {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-
-  .key-tag {
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.2);
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-family: 'JetBrains Mono', monospace;
-    color: var(--gold);
-  }
-
-  /* CURVE BARS */
-  .curve-section {
-    margin-bottom: 48px;
-  }
-
-  .curve-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 20px;
-  }
-
-  .curve-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 16px;
-  }
-
-  .curve-title {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 13px;
-    margin-bottom: 12px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .curve-bars {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-    height: 60px;
-  }
-
-  .curve-bar-wrap {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    height: 100%;
-    justify-content: flex-end;
-  }
-
-  .curve-bar {
-    width: 100%;
-    border-radius: 2px 2px 0 0;
-    min-height: 2px;
-    transition: height 0.4s ease;
-    position: relative;
-  }
-
-  .curve-bar-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-  }
-
-  .curve-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-
-  /* PANEL TABS */
   .panel { display: none; }
   .panel.active { display: block; animation: fadeUp 0.4s ease both; }
 
-  /* CARD TOOLTIP */
+  /* ── FEATURE 1: IMAGE TOOLTIP ── */
   .tooltip {
     position: fixed;
+    z-index: 9000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.18s ease;
+    filter: drop-shadow(0 12px 40px rgba(0,0,0,0.9));
+  }
+  .tooltip.visible { opacity: 1; }
+  .tooltip-img {
+    display: block;
+    width: 220px;
+    border-radius: 10px;
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .tooltip-fallback {
     background: var(--surface);
     border: 1px solid var(--gold);
     border-radius: 6px;
     padding: 10px 14px;
-    font-size: 14px;
-    z-index: 1000;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.15s;
-    max-width: 260px;
+    max-width: 240px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.8);
   }
-
-  .tooltip.visible { opacity: 1; }
   .tooltip-name { font-family: 'Cinzel Decorative', serif; font-size: 13px; color: var(--gold); margin-bottom: 4px; }
   .tooltip-info { font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--muted); }
 
-  /* ANIMATIONS */
-  @keyframes fadeDown {
-    from { opacity: 0; transform: translateY(-16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp   { from { opacity: 0; transform: translateY(16px);  } to { opacity: 1; transform: translateY(0); } }
 
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* SCROLLBAR */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
 
-  /* FOOTER */
-  footer {
-    text-align: center;
-    padding: 40px 24px;
-    border-top: 1px solid var(--border);
-    margin-top: 64px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--muted);
-    letter-spacing: 0.15em;
-  }
+  footer { text-align: center; padding: 40px 24px; border-top: 1px solid var(--border); margin-top: 64px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.15em; }
 
   .color-pip-w { color: #e8d8b0; }
   .color-pip-u { color: #5ab4e8; }
@@ -626,7 +417,6 @@
   .color-pip-r { color: #e86060; }
   .color-pip-g { color: #60cc80; }
 
-  /* Highlight for search */
   .card-pill.match { background: rgba(201,168,76,0.06); }
   .card-pill.no-match { opacity: 0.2; }
 
@@ -640,7 +430,7 @@
     flex-wrap: wrap;
   }
 
-  .open-pack-btn {
+  .open-pack-btn, .import-cube-btn {
     background: linear-gradient(135deg, #1a1228, #2a1a3e);
     border: 1px solid var(--gold);
     color: var(--gold);
@@ -658,7 +448,13 @@
     gap: 12px;
   }
 
-  .open-pack-btn::before {
+  .import-cube-btn {
+    border-color: rgba(201,168,76,0.5);
+    font-size: 13px;
+    padding: 14px 28px;
+  }
+
+  .open-pack-btn::before, .import-cube-btn::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -667,12 +463,12 @@
     transition: opacity 0.2s;
   }
 
-  .open-pack-btn:hover {
+  .open-pack-btn:hover, .import-cube-btn:hover {
     box-shadow: 0 0 24px rgba(201,168,76,0.25), 0 0 48px rgba(201,168,76,0.1);
     transform: translateY(-1px);
   }
-  .open-pack-btn:hover::before { opacity: 1; }
-  .open-pack-btn:active { transform: translateY(1px); }
+  .open-pack-btn:hover::before, .import-cube-btn:hover::before { opacity: 1; }
+  .open-pack-btn:active, .import-cube-btn:active { transform: translateY(1px); }
   .pack-icon { font-size: 20px; }
 
   /* PACK MODAL */
@@ -792,17 +588,236 @@
     padding: 2px 8px;
     border-radius: 12px;
   }
+
+  /* ── FEATURE 2: IMPORT MODAL ── */
+  .import-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.88);
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(4px);
+    padding: 20px;
+  }
+  .import-overlay.open { opacity: 1; pointer-events: all; }
+
+  .import-modal {
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 640px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 60px rgba(201,168,76,0.15), 0 32px 80px rgba(0,0,0,0.9);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.3s ease;
+  }
+  .import-overlay.open .import-modal { transform: translateY(0) scale(1); }
+
+  .import-modal-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .import-modal-title { font-family: 'Cinzel Decorative', serif; font-size: 16px; color: var(--gold); }
+
+  .import-modal-body { padding: 24px 28px; }
+
+  .import-format-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+    line-height: 1.7;
+  }
+  .import-format-hint .hint-gold { color: var(--gold); }
+
+  .import-textarea {
+    width: 100%;
+    height: 260px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    padding: 14px 16px;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.2s;
+    line-height: 1.6;
+  }
+  .import-textarea:focus { border-color: var(--gold); }
+  .import-textarea::placeholder { color: var(--muted); }
+
+  .import-progress-wrap { margin-top: 16px; display: none; }
+  .import-progress-wrap.visible { display: block; }
+
+  .import-progress-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .import-progress-track {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .import-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #8b6914, var(--gold), #f5e6c8);
+    width: 0%;
+    transition: width 0.15s ease;
+    border-radius: 3px;
+  }
+
+  .import-failed-list {
+    margin-top: 14px;
+    display: none;
+  }
+  .import-failed-list.visible { display: block; }
+  .import-failed-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #e87070;
+    margin-bottom: 6px;
+  }
+  .import-failed-cards {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(200,50,50,0.06);
+    border: 1px solid rgba(200,50,50,0.2);
+    border-radius: 4px;
+    padding: 10px 12px;
+    max-height: 120px;
+    overflow-y: auto;
+    line-height: 1.8;
+  }
+
+  .import-modal-footer {
+    padding: 16px 28px 24px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .import-submit-btn {
+    background: linear-gradient(135deg, #1a1228, #2a1a3e);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    padding: 11px 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .import-submit-btn:hover { box-shadow: 0 0 16px rgba(201,168,76,0.25); transform: translateY(-1px); }
+  .import-submit-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .import-cancel-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 11px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .import-cancel-btn:hover { border-color: var(--muted); color: var(--text); }
+
+  /* ── FEATURE 3: ARCHETYPE SECTION HEADERS (imported view) ── */
+  .arch-section { margin-bottom: 52px; }
+
+  .arch-section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding: 16px 0 14px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+  }
+
+  .arch-section-gem {
+    font-size: 16px;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .arch-section-title {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(201,168,76,0.3);
+    white-space: nowrap;
+  }
+
+  .arch-section-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.4), transparent);
+  }
+
+  .arch-section-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    background: rgba(201,168,76,0.06);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 2px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Badge shown in tabs for imported state */
+  .tab-badge {
+    background: var(--gold);
+    color: #1a1228;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 8px;
+    letter-spacing: 0;
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="mana-row">
-    <div class="mana-sym sym-w">W</div>
-    <div class="mana-sym sym-u">U</div>
-    <div class="mana-sym sym-b">B</div>
-    <div class="mana-sym sym-r">R</div>
-    <div class="mana-sym sym-g">G</div>
+    <div class="mana-sym sym-w" onclick="switchTab('white')" style="cursor:pointer" title="White">W</div>
+    <div class="mana-sym sym-u" onclick="switchTab('blue')" style="cursor:pointer" title="Blue">U</div>
+    <div class="mana-sym sym-b" onclick="switchTab('black')" style="cursor:pointer" title="Black">B</div>
+    <div class="mana-sym sym-r" onclick="switchTab('red')" style="cursor:pointer" title="Red">R</div>
+    <div class="mana-sym sym-g" onclick="switchTab('green')" style="cursor:pointer" title="Green">G</div>
   </div>
   <h1>Tom's Unpowered Cube</h1>
   <div class="subtitle">Cube Draft · Ravnica Guilds</div>
@@ -817,7 +832,7 @@
     <div class="stat-divider"></div>
     <div class="stat"><div class="stat-num">10</div><div class="stat-label">Guilds</div></div>
     <div class="stat-divider"></div>
-    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Archetypes</div></div>
+    <div class="stat"><div class="stat-num" id="arch-count">10</div><div class="stat-label">Archetypes</div></div>
     <div class="stat-divider"></div>
     <div class="stat"><div class="stat-num">8</div><div class="stat-label">Draft Seats</div></div>
   </div>
@@ -825,6 +840,9 @@
   <div class="pack-btn-wrap">
     <button class="open-pack-btn" id="open-pack-btn">
       <span class="pack-icon">✦</span> Open a Pack <span class="pack-icon">✦</span>
+    </button>
+    <button class="import-cube-btn" id="import-cube-btn">
+      ◈ Import Cube List
     </button>
   </div>
 
@@ -834,77 +852,52 @@
   </div>
   <div class="search-results-count" id="search-count"></div>
 
-  <div class="tabs">
-    <button class="tab active" onclick="switchTab('overview')">
+  <div class="tabs" id="tab-bar">
+    <button class="tab active" data-tab="overview">
       <span style="color:#c9a84c">◆</span> Overview
     </button>
-    <button class="tab" onclick="switchTab('white')">
+    <button class="tab" data-tab="white">
       <span class="tab-dot" style="background:#e8d8b0"></span> White
     </button>
-    <button class="tab" onclick="switchTab('blue')">
+    <button class="tab" data-tab="blue">
       <span class="tab-dot" style="background:#5ab4e8"></span> Blue
     </button>
-    <button class="tab" onclick="switchTab('black')">
+    <button class="tab" data-tab="black">
       <span class="tab-dot" style="background:#9060d0"></span> Black
     </button>
-    <button class="tab" onclick="switchTab('red')">
+    <button class="tab" data-tab="red">
       <span class="tab-dot" style="background:#e86060"></span> Red
     </button>
-    <button class="tab" onclick="switchTab('green')">
+    <button class="tab" data-tab="green">
       <span class="tab-dot" style="background:#60cc80"></span> Green
     </button>
-    <button class="tab" onclick="switchTab('multicolor')">
+    <button class="tab" data-tab="multicolor">
       <span class="tab-dot" style="background:#c9a84c"></span> Multicolor
     </button>
-    <button class="tab" onclick="switchTab('artifacts')">
+    <button class="tab" data-tab="artifacts">
       <span class="tab-dot" style="background:#8a9bb0"></span> Artifacts
     </button>
-    <button class="tab" onclick="switchTab('lands')">
+    <button class="tab" data-tab="lands">
       <span class="tab-dot" style="background:#8b6930"></span> Lands
     </button>
-    <button class="tab" onclick="switchTab('archetypes')">
+    <button class="tab" data-tab="archetypes">
       <span style="color:#c9a84c">✦</span> Archetypes
     </button>
-    <button class="tab" onclick="switchTab('curve')">
+    <button class="tab" data-tab="curve">
       <span style="color:#c9a84c">▲</span> Curve
     </button>
   </div>
 
-  <!-- OVERVIEW -->
   <div id="panel-overview" class="panel active">
     <div class="curve-grid" style="margin-bottom:40px">
-      <!-- overview mini curves per color -->
-      <div class="curve-card">
-        <div class="curve-title"><span style="color:#e8d8b0">◈</span> White</div>
-        <div class="curve-bars" id="curve-w"></div>
-      </div>
-      <div class="curve-card">
-        <div class="curve-title"><span style="color:#5ab4e8">◈</span> Blue</div>
-        <div class="curve-bars" id="curve-u"></div>
-      </div>
-      <div class="curve-card">
-        <div class="curve-title"><span style="color:#9060d0">◈</span> Black</div>
-        <div class="curve-bars" id="curve-b"></div>
-      </div>
-      <div class="curve-card">
-        <div class="curve-title"><span style="color:#e86060">◈</span> Red</div>
-        <div class="curve-bars" id="curve-r"></div>
-      </div>
-      <div class="curve-card">
-        <div class="curve-title"><span style="color:#60cc80">◈</span> Green</div>
-        <div class="curve-bars" id="curve-g"></div>
-      </div>
+      <div class="curve-card"><div class="curve-title"><span style="color:#e8d8b0">◈</span> White</div><div class="curve-bars" id="curve-w"></div></div>
+      <div class="curve-card"><div class="curve-title"><span style="color:#5ab4e8">◈</span> Blue</div><div class="curve-bars" id="curve-u"></div></div>
+      <div class="curve-card"><div class="curve-title"><span style="color:#9060d0">◈</span> Black</div><div class="curve-bars" id="curve-b"></div></div>
+      <div class="curve-card"><div class="curve-title"><span style="color:#e86060">◈</span> Red</div><div class="curve-bars" id="curve-r"></div></div>
+      <div class="curve-card"><div class="curve-title"><span style="color:#60cc80">◈</span> Green</div><div class="curve-bars" id="curve-g"></div></div>
     </div>
-
-    <div class="section-header">
-      <div class="section-title">All Cards</div>
-      <div class="section-line"></div>
-      <div class="section-count" id="all-count">loading…</div>
-    </div>
-    <div id="all-cards-list" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:2px;"></div>
   </div>
 
-  <!-- COLOR PANELS -->
   <div id="panel-white" class="panel"></div>
   <div id="panel-blue" class="panel"></div>
   <div id="panel-black" class="panel"></div>
@@ -914,12 +907,10 @@
   <div id="panel-artifacts" class="panel"></div>
   <div id="panel-lands" class="panel"></div>
 
-  <!-- ARCHETYPES -->
   <div id="panel-archetypes" class="panel">
     <div class="archetype-grid" id="archetype-grid"></div>
   </div>
 
-  <!-- CURVE -->
   <div id="panel-curve" class="panel">
     <div class="curve-grid" id="full-curve-grid"></div>
   </div>
@@ -929,9 +920,73 @@
   Tom's Unpowered Cube · Interactive Viewer · <span id="year"></span>
 </footer>
 
+<!-- PACK MODAL -->
+<div class="pack-overlay" id="pack-overlay">
+  <div class="pack-modal" id="pack-modal">
+    <div class="pack-modal-header">
+      <div class="pack-modal-title">
+        ✦ Sample Pack
+        <span class="pack-count-badge" id="pack-count-badge">15 cards</span>
+      </div>
+      <button class="pack-close" id="pack-close-btn">✕</button>
+    </div>
+    <div class="pack-cards-grid" id="pack-cards-grid"></div>
+    <div class="pack-modal-footer">
+      <button class="pack-again-btn" id="pack-again-btn">✦ Open Another Pack</button>
+      <button class="pack-dismiss-btn" id="pack-dismiss-btn">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- IMPORT MODAL -->
+<div class="import-overlay" id="import-overlay">
+  <div class="import-modal">
+    <div class="import-modal-header">
+      <div class="import-modal-title">◈ Import Cube List</div>
+      <button class="pack-close" id="import-close-btn">✕</button>
+    </div>
+    <div class="import-modal-body">
+      <div class="import-format-hint">
+        <span class="hint-gold"># Archetype Name</span> — defines an archetype section<br>
+        <span class="hint-gold">Card Name</span> or <span class="hint-gold">1x Card Name</span> — adds a card to the current section<br>
+        Cards before any <span class="hint-gold">#</span> header go into <em>Unsorted</em>. No headers = plain list, color-sorted view.
+      </div>
+      <textarea
+        class="import-textarea"
+        id="import-textarea"
+        placeholder="# Aggro Red&#10;Lightning Bolt&#10;Goblin Guide&#10;&#10;# Control Blue&#10;Counterspell&#10;Brainstorm&#10;&#10;Sol Ring"
+        spellcheck="false"
+      ></textarea>
+
+      <div class="import-progress-wrap" id="import-progress-wrap">
+        <div class="import-progress-label">
+          <span id="import-progress-text">Fetching cards from Scryfall…</span>
+          <span id="import-progress-nums">0 / 0</span>
+        </div>
+        <div class="import-progress-track">
+          <div class="import-progress-bar" id="import-progress-bar"></div>
+        </div>
+      </div>
+
+      <div class="import-failed-list" id="import-failed-list">
+        <div class="import-failed-label">⚠ Cards not found on Scryfall:</div>
+        <div class="import-failed-cards" id="import-failed-cards"></div>
+      </div>
+    </div>
+    <div class="import-modal-footer">
+      <button class="import-cancel-btn" id="import-cancel-btn">Cancel</button>
+      <button class="import-submit-btn" id="import-submit-btn">✦ Import</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLTIP (image-based) -->
 <div class="tooltip" id="tooltip">
-  <div class="tooltip-name" id="tt-name"></div>
-  <div class="tooltip-info" id="tt-info"></div>
+  <img class="tooltip-img" id="tt-img" alt="" src="">
+  <div class="tooltip-fallback" id="tt-fallback" style="display:none">
+    <div class="tooltip-name" id="tt-name"></div>
+    <div class="tooltip-info">Click to view on Scryfall →</div>
+  </div>
 </div>
 
 <script>
@@ -940,9 +995,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // ===================== DATA =====================
 const CUBE = {
   white: {
-    color: 'w',
-    label: 'White',
-    accent: '#e8d8b0',
+    color: 'w', label: 'White', accent: '#e8d8b0',
     creatures: {
       '1': ['Boros Elite','Thraben Inspector','Elite Arrester','Descendant of Storms','Indebted Spirit','Novice Inspector','Usher of the Fallen'],
       '2': ['Spirited Companion','Drannith Healer','Daring Skyjek','Syndic of Tithes','Sunhome Stalwart','Grateful Apparition','Martyr for the Cause'],
@@ -962,9 +1015,7 @@ const CUBE = {
     }
   },
   blue: {
-    color: 'u',
-    label: 'Blue',
-    accent: '#5ab4e8',
+    color: 'u', label: 'Blue', accent: '#5ab4e8',
     creatures: {
       '1': ['Cloudfin Raptor','Thoughtbound Phantasm','Pteramander','Spectral Sailor'],
       '2': ['Faerie Vandal','Hypnotic Sprite','Nightveil Sprite','Unwelcome Sprite','Aven Eternal','Riftwing Cloudskate','Thrummingbird','Aquatic Alchemist','Augur of Bolas','Flux Channeler'],
@@ -976,16 +1027,14 @@ const CUBE = {
     spells: {
       '1': ['Blustersquall','Rapid Hybridization','Opt','Consider','Otherworldly Gaze','Witching Well','Silent Departure','Cryoshatter'],
       '2': ['Remand','Curate','Unexplained Disappearance','The Modern Age','Mana Leak','Into the Roil','Memory Lapse','Spreading Seas','Counterspell','Search for Azcanta'],
-      '3': ['Swallowed by Leviathan','Narset, Parter of Veils','Dramatic Accusation','Ephara\'s Dispersal','Tezzeret\'s Gambit'],
+      '3': ['Swallowed by Leviathan','Narset, Parter of Veils','Dramatic Accusation',"Ephara's Dispersal","Tezzeret's Gambit"],
       '4': ['Spellgyre','Kasmina, Enigmatic Mentor'],
       '5': ['Behold the Unspeakable','Lórien Revealed'],
       '6+': ['Lay Claim','Sublime Epiphany','Shark Typhoon'],
     }
   },
   black: {
-    color: 'b',
-    label: 'Black',
-    accent: '#b090e0',
+    color: 'b', label: 'Black', accent: '#b090e0',
     creatures: {
       '1': ['Thrull Parasite','Cult Conscript','Foulmire Knight','Dockside Chef','Vampire of the Dire Moon','Faerie Dreamthief',"Stitcher's Supplier",'Umbral Collar Zealot'],
       '2': ['Dusk Legion Zealot','Desperate Bloodseeker','Whispering Snitch','Orzhov Enforcer','Lazotep Reaver','Order of Midnight','Sinister Starfish'],
@@ -998,16 +1047,14 @@ const CUBE = {
     spells: {
       '1': ['Grim Bauble','Phyrexian Reclamation','Bone Shards','Village Rites','You Are Already Dead','Tortured Existence','Ghost Lantern','Vendetta','Blood Fountain'],
       '2': ['Ultimate Price','Drown in Ichor','Plumb the Forbidden','Go for the Throat','Davriel, Rogue Shadowmage','Moan of the Unhallowed'],
-      '3': ['Stab Wound','Murder','Dismember','Diresight','Assassin\'s Ink'],
-      '4': ['The Grim Captain\'s Locker','Price of Fame','Dread Return','Soul Enervation'],
+      '3': ['Stab Wound','Murder','Dismember','Diresight',"Assassin's Ink"],
+      '4': ["The Grim Captain's Locker",'Price of Fame','Dread Return','Soul Enervation'],
       '5': ['Deadly Visit','Spread the Sickness','Unburial Rites'],
       '6+': ['Liliana, Dreadhorde General','Army of the Damned','Stir the Sands'],
     }
   },
   red: {
-    color: 'r',
-    label: 'Red',
-    accent: '#e86060',
+    color: 'r', label: 'Red', accent: '#e86060',
     creatures: {
       '1': ['Kumano Faces Kakkazan','Grim Initiate',"Dragon's Rage Channeler",'Simian Sling','Rabbit Battery','Goblin Banneret','Tin Street Dodger','Fanatical Firebrand','Young Pyromancer','Monastery Swiftspear'],
       '2': ['Embereth Shieldbreaker','Burning Prophet','Rimrock Knight','Firefist Striker','Drannith Stinger','Heartfire Immolator','Sanguinary Mage'],
@@ -1026,9 +1073,7 @@ const CUBE = {
     }
   },
   green: {
-    color: 'g',
-    label: 'Green',
-    accent: '#60cc80',
+    color: 'g', label: 'Green', accent: '#60cc80',
     creatures: {
       '1': ['Elves of Deep Shadow',"Centaur's Herald",'Experiment One','Arbor Elf','Rubblebelt Maverick','Llanowar Elves','Haywire Mite','Cankerbloom'],
       '2': ['Drudge Beetle','Basking Broodscale','Kraul Harpooner','Bamboo Grove Archer','Paradise Druid','Pollenbright Druid'],
@@ -1050,17 +1095,17 @@ const CUBE = {
 };
 
 const MULTICOLOR = {
-  simic: { label:'Simic', pips:['u','g'], cards:['Simic Guildmage','Scuttling Sentinel','Kiora, Behemoth Beckoner','Zegana, Utopian Speaker','Prime Speaker Zegana','Fathom Mage','Simic Charm','Colossal Skyturtle','Combine Guildmage','Frilled Mystic','Sharktocrab','Primal Empathy','Glowspore Shaman'] },
+  simic:    { label:'Simic',    pips:['u','g'], cards:['Simic Guildmage','Scuttling Sentinel','Kiora, Behemoth Beckoner','Zegana, Utopian Speaker','Prime Speaker Zegana','Fathom Mage','Simic Charm','Colossal Skyturtle','Combine Guildmage','Frilled Mystic','Sharktocrab','Primal Empathy','Glowspore Shaman'] },
   selesnya: { label:'Selesnya', pips:['w','g'], cards:['Sundering Growth','Selesnya Guildmage','Growing Ranks','Armada Wurm','Collective Blessing','Advent of the Wurm','Call of the Conclave',"Trostani's Summoner",'Vitu-Ghazi Guildmage','Buried in the Garden','Good-Fortune Unicorn','Conclave Cavalier'] },
-  golgari: { label:'Golgari', pips:['b','g'], cards:['Golgari Guildmage','Tribune of Rot','Hag Hedge-Mage','Sludge Titan','Underrealm Lich','Casualties of War',"Assassin's Trophy",'Golgari Findbroker','Deathsprout','Grisly Salvage','Varolz, the Scar-Striped','Leyline Prowler','Broodheart Engine'] },
-  orzhov: { label:'Orzhov', pips:['w','b'], cards:['Unmake','Gwyllion Hedge-Mage','Syndicate Heavy','Mortify','Aryel, Knight of Windgrace','Basilica Bell-Haunt','Despark','Hidden Stockpile','Ashen Rider','Ethereal Absolution','Seraph of the Scales','No More Lies'] },
-  azorius: { label:'Azorius', pips:['w','u'], cards:['Azorius Guildmage','Plumeveil','Migratory Route','Sphinx of New Prahv','Senate Guildmage',"Dovin's Acuity",'Supreme Verdict','Cloudblazer','Dream Trawler','Jubilant Skybonder','Dovin, Hand of Control','Venser, the Sojourner'] },
-  boros: { label:'Boros', pips:['r','w'], cards:['Boros Guildmage','Nahiri, Storm of Stone','Ordruun Mentor','Lightning Helix','Truefire Captain','Boros Challenger','Skyknight Legionnaire','Heroic Reinforcements','Assemble the Legion','Aurelia, Exemplar of Justice','Deafening Clarion',"Tajic, Legion's Edge"] },
-  rakdos: { label:'Rakdos', pips:['b','r'], cards:['Rakdos Guildmage','Rakdos Cackler','Angrath, Captain of Chaos','Fireblade Artist','Rakdos Firewheeler','Mayhem Devil','Grave Upheaval','Theater of Horrors','Bituminous Blast','Bedevil','Rakdos, Patron of Chaos','Terminate'] },
-  izzet: { label:'Izzet', pips:['u','r'], cards:['Saheeli, Sublime Artificer','Frostburn Weird','Ecstatic Electromancer','Improbable Alliance','Melek, Izzet Paragon','Crackling Drake','Third Path Iconoclast','Expressive Iteration','Ral Zarek','Niv-Mizzet, Parun','Lutri, the Spellchaser','Dominus of Fealty'] },
-  gruul: { label:'Gruul', pips:['r','g'], cards:['Gruul Guildmage','Burning-Tree Emissary','Samut, Tyrant Smasher','Stampede Surfer','Zhur-Taa Goblin','Skarrg Guildmage','Sunder Shaman','Child of the Pack','Rhythm of the Wild','Domri, Anarch of Bolas','Ruric Thar, the Unbowed','Bloodbraid Challenger'] },
-  dimir: { label:'Dimir', pips:['u','b'], cards:['Dimir Guildmage','Scarscale Ritual','Mind Drill Assailant','Disinformation Campaign','House Guildmage','Nightveil Predator','Thought Erasure','Coerced to Kill','Enter the God-Eternals','Tezzeret, Agent of Bolas','Baleful Strix','Havengul Lich'] },
-  fivecolor: { label:'5-Color', pips:['w','u','b','r','g'], cards:['Nicol Bolas, Dragon-God','Niv-Mizzet Reborn','The Kami War','Cruel Ultimatum','Two-Headed Hellkite'] }
+  golgari:  { label:'Golgari',  pips:['b','g'], cards:['Golgari Guildmage','Tribune of Rot','Hag Hedge-Mage','Sludge Titan','Underrealm Lich','Casualties of War',"Assassin's Trophy",'Golgari Findbroker','Deathsprout','Grisly Salvage','Varolz, the Scar-Striped','Leyline Prowler','Broodheart Engine'] },
+  orzhov:   { label:'Orzhov',   pips:['w','b'], cards:['Unmake','Gwyllion Hedge-Mage','Syndicate Heavy','Mortify','Aryel, Knight of Windgrace','Basilica Bell-Haunt','Despark','Hidden Stockpile','Ashen Rider','Ethereal Absolution','Seraph of the Scales','No More Lies'] },
+  azorius:  { label:'Azorius',  pips:['w','u'], cards:['Azorius Guildmage','Plumeveil','Migratory Route','Sphinx of New Prahv','Senate Guildmage',"Dovin's Acuity",'Supreme Verdict','Cloudblazer','Dream Trawler','Jubilant Skybonder','Dovin, Hand of Control','Venser, the Sojourner'] },
+  boros:    { label:'Boros',    pips:['r','w'], cards:['Boros Guildmage','Nahiri, Storm of Stone','Ordruun Mentor','Lightning Helix','Truefire Captain','Boros Challenger','Skyknight Legionnaire','Heroic Reinforcements','Assemble the Legion','Aurelia, Exemplar of Justice','Deafening Clarion',"Tajic, Legion's Edge"] },
+  rakdos:   { label:'Rakdos',   pips:['b','r'], cards:['Rakdos Guildmage','Rakdos Cackler','Angrath, Captain of Chaos','Fireblade Artist','Rakdos Firewheeler','Mayhem Devil','Grave Upheaval','Theater of Horrors','Bituminous Blast','Bedevil','Rakdos, Patron of Chaos','Terminate'] },
+  izzet:    { label:'Izzet',    pips:['u','r'], cards:['Saheeli, Sublime Artificer','Frostburn Weird','Ecstatic Electromancer','Improbable Alliance','Melek, Izzet Paragon','Crackling Drake','Third Path Iconoclast','Expressive Iteration','Ral Zarek','Niv-Mizzet, Parun','Lutri, the Spellchaser','Dominus of Fealty'] },
+  gruul:    { label:'Gruul',    pips:['r','g'], cards:['Gruul Guildmage','Burning-Tree Emissary','Samut, Tyrant Smasher','Stampede Surfer','Zhur-Taa Goblin','Skarrg Guildmage','Sunder Shaman','Child of the Pack','Rhythm of the Wild','Domri, Anarch of Bolas','Ruric Thar, the Unbowed','Bloodbraid Challenger'] },
+  dimir:    { label:'Dimir',    pips:['u','b'], cards:['Dimir Guildmage','Scarscale Ritual','Mind Drill Assailant','Disinformation Campaign','House Guildmage','Nightveil Predator','Thought Erasure','Coerced to Kill','Enter the God-Eternals','Tezzeret, Agent of Bolas','Baleful Strix','Havengul Lich'] },
+  fivecolor:{ label:'5-Color',  pips:['w','u','b','r','g'], cards:['Nicol Bolas, Dragon-God','Niv-Mizzet Reborn','The Kami War','Cruel Ultimatum','Two-Headed Hellkite'] }
 };
 
 const ARTIFACTS = {
@@ -1075,37 +1120,155 @@ const ARTIFACTS = {
 };
 
 const LANDS = {
-  simic: ['Tropical Island','Misty Rainforest','Hedge Maze','Breeding Pool','Rain-Slicked Copse','Hinterland Harbor'],
+  simic:    ['Tropical Island','Misty Rainforest','Hedge Maze','Breeding Pool','Rain-Slicked Copse','Hinterland Harbor'],
   selesnya: ['Savannah','Windswept Heath','Lush Portico','Temple Garden','Scattered Groves','Sunpetal Grove'],
-  golgari: ['Bayou','Verdant Catacombs','Underground Mortuary','Overgrown Tomb','Festering Thicket','Restless Cottage'],
-  orzhov: ['Scrubland','Marsh Flats','Shadowy Backstreet','Godless Shrine','Temple of Silence','Isolated Chapel'],
-  azorius: ['Tundra','Flooded Strand','Meticulous Archive','Hallowed Fountain','Irrigated Farmland','Celestial Colonnade'],
-  boros: ['Plateau','Arid Mesa','Elegant Parlor','Sacred Foundry','Glittering Massif','Clifftop Retreat'],
-  rakdos: ['Badlands','Bloodstained Mire','Raucous Theater','Blood Crypt','Canyon Slough','Dragonskull Summit'],
-  izzet: ['Volcanic Island','Scalding Tarn','Thundering Falls','Steam Vents','Temple of Epiphany','Sulfur Falls'],
-  gruul: ['Taiga','Wooded Foothills','Commercial District','Stomping Ground','Sheltered Thicket','Raging Ravine'],
-  dimir: ['Underground Sea','Polluted Delta','Undercity Sewers','Watery Grave','Fetid Pools','Creeping Tar Pit'],
+  golgari:  ['Bayou','Verdant Catacombs','Underground Mortuary','Overgrown Tomb','Festering Thicket','Restless Cottage'],
+  orzhov:   ['Scrubland','Marsh Flats','Shadowy Backstreet','Godless Shrine','Temple of Silence','Isolated Chapel'],
+  azorius:  ['Tundra','Flooded Strand','Meticulous Archive','Hallowed Fountain','Irrigated Farmland','Celestial Colonnade'],
+  boros:    ['Plateau','Arid Mesa','Elegant Parlor','Sacred Foundry','Glittering Massif','Clifftop Retreat'],
+  rakdos:   ['Badlands','Bloodstained Mire','Raucous Theater','Blood Crypt','Canyon Slough','Dragonskull Summit'],
+  izzet:    ['Volcanic Island','Scalding Tarn','Thundering Falls','Steam Vents','Temple of Epiphany','Sulfur Falls'],
+  gruul:    ['Taiga','Wooded Foothills','Commercial District','Stomping Ground','Sheltered Thicket','Raging Ravine'],
+  dimir:    ['Underground Sea','Polluted Delta','Undercity Sewers','Watery Grave','Fetid Pools','Creeping Tar Pit'],
   trilands: ["Jetmir's Garden",'Savai Triome','Indatha Triome','Zagoth Triome','Ketria Triome','Raugrin Triome',"Spara's Headquarters","Raffine's Tower","Xander's Lounge","Ziatora's Proving Ground"],
 };
 
 const ARCHETYPES = [
-  { name:'Skies', guild:'Azorius (W/U)', color:'#a0c8e8', desc:'Tempo-based flying strategy. Develop cheap flyers and protect them with interaction, closing out games before opponents stabilize.', keys:['Flying','Blink','Tempo'] },
-  { name:'Sacrifice', guild:'Rakdos (B/R)', color:'#c86060', desc:'Generate value by repeatedly sacrificing creatures to trigger death effects and card advantage engines.', keys:['Aristocrats','Recursion','Drain'] },
-  { name:'Tokens', guild:'Selesnya (G/W)', color:'#c8e0b0', desc:'Flood the board with token creatures, then pump them with anthems or sacrifice them for burst damage.', keys:['Go Wide','Anthems','Convoke'] },
-  { name:'Reanimator', guild:'Orzhov (W/B)', color:'#c0a8d8', desc:'Fill the graveyard early, then cheat large threats into play with reanimation spells.', keys:['Graveyard','Reanimate','Self-Mill'] },
-  { name:'Proliferate', guild:'Simic (G/U)', color:'#80d8c0', desc:'Build up +1/+1 counters and loyalty counters, then accelerate them with Proliferate effects.', keys:['+1/+1 Counters','Proliferate','Value'] },
-  { name:'Spells Matter', guild:'Izzet (U/R)', color:'#80c0e8', desc:'Fill your deck with cheap instants and sorceries to trigger prowess-style creatures and cantrip engines.', keys:['Prowess','Cantrips','Instants'] },
-  { name:'Graveyard Midrange', guild:'Golgari (B/G)', color:'#80b880', desc:'Trade resources early with efficient creatures and removal, then leverage graveyard recursion to outvalue opponents.', keys:['Undergrowth','Dredge','Midrange'] },
-  { name:'Aggro Tokens', guild:'Boros (R/W)', color:'#e8c080', desc:'Apply maximum early pressure with cheap creatures and combat tricks, finishing with direct damage.', keys:['Aggro','Combat Tricks','Burn'] },
-  { name:'Stompy', guild:'Gruul (R/G)', color:'#c0e880', desc:'Accelerate mana with green ramp creatures, then deploy oversized threats that attack from multiple angles.', keys:['Ramp','Trample','Fatties'] },
-  { name:'Control', guild:'Dimir (U/B)', color:'#8080c8', desc:'Answer threats efficiently with removal and counterspells, drawing ahead into card advantage engines to close with large finishers.', keys:['Control','Card Draw','Finishers'] },
+  { name:'Skies',             guild:'Azorius (W/U)',  color:'#a0c8e8', desc:'Tempo-based flying strategy. Develop cheap flyers and protect them with interaction, closing out games before opponents stabilize.',          keys:['Flying','Blink','Tempo'] },
+  { name:'Sacrifice',         guild:'Rakdos (B/R)',   color:'#c86060', desc:'Generate value by repeatedly sacrificing creatures to trigger death effects and card advantage engines.',                                     keys:['Aristocrats','Recursion','Drain'] },
+  { name:'Tokens',            guild:'Selesnya (G/W)', color:'#c8e0b0', desc:'Flood the board with token creatures, then pump them with anthems or sacrifice them for burst damage.',                                       keys:['Go Wide','Anthems','Convoke'] },
+  { name:'Reanimator',        guild:'Orzhov (W/B)',   color:'#c0a8d8', desc:'Fill the graveyard early, then cheat large threats into play with reanimation spells.',                                                       keys:['Graveyard','Reanimate','Self-Mill'] },
+  { name:'Proliferate',       guild:'Simic (G/U)',    color:'#80d8c0', desc:'Build up +1/+1 counters and loyalty counters, then accelerate them with Proliferate effects.',                                                keys:['+1/+1 Counters','Proliferate','Value'] },
+  { name:'Spells Matter',     guild:'Izzet (U/R)',    color:'#80c0e8', desc:'Fill your deck with cheap instants and sorceries to trigger prowess-style creatures and cantrip engines.',                                    keys:['Prowess','Cantrips','Instants'] },
+  { name:'Graveyard Midrange',guild:'Golgari (B/G)',  color:'#80b880', desc:'Trade resources early with efficient creatures and removal, then leverage graveyard recursion to outvalue opponents.',                        keys:['Undergrowth','Dredge','Midrange'] },
+  { name:'Aggro Tokens',      guild:'Boros (R/W)',    color:'#e8c080', desc:'Apply maximum early pressure with cheap creatures and combat tricks, finishing with direct damage.',                                          keys:['Aggro','Combat Tricks','Burn'] },
+  { name:'Stompy',            guild:'Gruul (R/G)',    color:'#c0e880', desc:'Accelerate mana with green ramp creatures, then deploy oversized threats that attack from multiple angles.',                                   keys:['Ramp','Trample','Fatties'] },
+  { name:'Control',           guild:'Dimir (U/B)',    color:'#8080c8', desc:'Answer threats efficiently with removal and counterspells, drawing ahead into card advantage engines to close with large finishers.',         keys:['Control','Card Draw','Finishers'] },
 ];
+
+// ===================== FEATURE 1: SCRYFALL IMAGE CACHE + RATE LIMITER =====================
+const cardCache = new Map();      // name.toLowerCase() -> {imageUrl, name} or null
+const scryfallQueue = [];
+let scryfallRunning = false;
+let lastScryfallTime = 0;
+const SCRYFALL_DELAY = 55; // ms between requests
+
+function scryfallDelay(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+async function runScryfallQueue() {
+  if (scryfallRunning) return;
+  scryfallRunning = true;
+  while (scryfallQueue.length > 0) {
+    const task = scryfallQueue.shift();
+    const now = Date.now();
+    const wait = Math.max(0, SCRYFALL_DELAY - (now - lastScryfallTime));
+    if (wait > 0) await scryfallDelay(wait);
+    lastScryfallTime = Date.now();
+    try {
+      const res = await fetch(`https://api.scryfall.com/cards/named?fuzzy=${encodeURIComponent(task.name)}`);
+      if (!res.ok) { cardCache.set(task.key, null); task.resolve(null); continue; }
+      const data = await res.json();
+      const imageUrl = (data.image_uris && data.image_uris.normal)
+        || (data.card_faces && data.card_faces[0] && data.card_faces[0].image_uris && data.card_faces[0].image_uris.normal)
+        || null;
+      const result = {
+        imageUrl,
+        name: data.name,
+        cmc: data.cmc || 0,
+        colorIdentity: data.color_identity || [],
+        typeLine: data.type_line || '',
+      };
+      cardCache.set(task.key, result);
+      task.resolve(result);
+    } catch(e) {
+      cardCache.set(task.key, null);
+      task.resolve(null);
+    }
+  }
+  scryfallRunning = false;
+}
+
+function fetchCard(name) {
+  const key = name.toLowerCase();
+  if (cardCache.has(key)) return Promise.resolve(cardCache.get(key));
+  return new Promise(resolve => {
+    scryfallQueue.push({ name, key, resolve });
+    runScryfallQueue();
+  });
+}
+
+// ===================== TOOLTIP (IMAGE) =====================
+const tooltip    = document.getElementById('tooltip');
+const ttImg      = document.getElementById('tt-img');
+const ttFallback = document.getElementById('tt-fallback');
+const ttName     = document.getElementById('tt-name');
+
+let tooltipHoverTimer = null;
+let tooltipCurrentCard = null;
+
+function positionTooltip(e) {
+  const W = window.innerWidth, H = window.innerHeight;
+  const TW = 232, TH = ttImg.style.display !== 'none' ? 324 : 72;
+  let x = e.clientX + 18, y = e.clientY - 10;
+  if (x + TW > W - 8) x = e.clientX - TW - 12;
+  if (y + TH > H - 8) y = H - TH - 8;
+  if (y < 8) y = 8;
+  tooltip.style.left = x + 'px';
+  tooltip.style.top  = y + 'px';
+}
+
+function showTooltip(e) {
+  const card = e.currentTarget;
+  tooltipCurrentCard = card;
+  const name = card.dataset.cardName || card.textContent.trim();
+
+  // Show name text fallback immediately
+  ttImg.style.display = 'none';
+  ttFallback.style.display = 'block';
+  ttName.textContent = name;
+  tooltip.classList.add('visible');
+  positionTooltip(e);
+
+  clearTimeout(tooltipHoverTimer);
+  tooltipHoverTimer = setTimeout(() => {
+    if (tooltipCurrentCard !== card) return;
+    fetchCard(name).then(data => {
+      if (tooltipCurrentCard !== card) return;
+      if (data && data.imageUrl) {
+        const img = new Image();
+        img.onload = () => {
+          if (tooltipCurrentCard !== card) return;
+          ttImg.src = data.imageUrl;
+          ttImg.style.display = 'block';
+          ttFallback.style.display = 'none';
+        };
+        img.src = data.imageUrl;
+      }
+    });
+  }, 120);
+}
+
+function hideTooltip() {
+  tooltipCurrentCard = null;
+  clearTimeout(tooltipHoverTimer);
+  tooltip.classList.remove('visible');
+  // Delay clearing src so fade-out is smooth
+  setTimeout(() => {
+    if (!tooltip.classList.contains('visible')) {
+      ttImg.src = '';
+      ttImg.style.display = 'none';
+      ttFallback.style.display = 'block';
+    }
+  }, 200);
+}
+
+function moveTooltip(e) { positionTooltip(e); }
 
 // ===================== HELPERS =====================
 const pipColor = { w:'#e8d8b0', u:'#5ab4e8', b:'#9060d0', r:'#e86060', g:'#60cc80' };
 const barColor = { w:'rgba(232,216,176,0.7)', u:'rgba(90,180,232,0.7)', b:'rgba(144,96,208,0.7)', r:'rgba(232,96,96,0.7)', g:'rgba(96,204,128,0.7)' };
 
-function makeCard(name, extraClass='') {
+function makeCard(name, extraClass = '') {
   const el = document.createElement('a');
   el.className = `card-pill ${extraClass}`;
   el.textContent = name;
@@ -1113,37 +1276,18 @@ function makeCard(name, extraClass='') {
   el.target = '_blank';
   el.rel = 'noopener';
   el.dataset.name = name.toLowerCase();
+  el.dataset.cardName = name;
   el.addEventListener('mouseenter', showTooltip);
   el.addEventListener('mouseleave', hideTooltip);
   el.addEventListener('mousemove', moveTooltip);
   return el;
 }
 
-const tooltip = document.getElementById('tooltip');
-const ttName = document.getElementById('tt-name');
-const ttInfo = document.getElementById('tt-info');
-
-function showTooltip(e) {
-  ttName.textContent = e.currentTarget.textContent;
-  ttInfo.textContent = 'Click to view on Scryfall →';
-  tooltip.classList.add('visible');
-}
-function hideTooltip() { tooltip.classList.remove('visible'); }
-function moveTooltip(e) {
-  let x = e.clientX + 16, y = e.clientY - 10;
-  if (x + 260 > window.innerWidth) x = e.clientX - 276;
-  tooltip.style.left = x + 'px';
-  tooltip.style.top = y + 'px';
-}
-
-function buildCMCSection(cmcData, colorKey, label) {
+function buildCMCSection(cmcData, colorKey) {
   const cmcLabels = ['1','2','3','4','5','6+','X'];
   const section = document.createElement('div');
   section.className = 'color-section';
-
   const cards = [];
-  const colEls = [];
-
   const grid = document.createElement('div');
   grid.className = 'cmc-grid';
 
@@ -1153,7 +1297,7 @@ function buildCMCSection(cmcData, colorKey, label) {
     const list = cmcData[cmc] || [];
     const hdr = document.createElement('div');
     hdr.className = 'cmc-header';
-    hdr.innerHTML = `<span class="cmc-num">${cmc === '6+' ? '6+' : cmc} CMC</span><span class="cmc-total">${list.length}</span>`;
+    hdr.innerHTML = `<span class="cmc-num">${cmc} CMC</span><span class="cmc-total">${list.length}</span>`;
     col.appendChild(hdr);
     const body = document.createElement('div');
     body.className = `cmc-cards tint-${colorKey}`;
@@ -1164,19 +1308,17 @@ function buildCMCSection(cmcData, colorKey, label) {
     });
     col.appendChild(body);
     grid.appendChild(col);
-    colEls.push({ el: col, count: list.length });
   });
 
   section.appendChild(grid);
   return { section, cards };
 }
 
-// Count all cards
 function countAll() {
   let n = 0;
   Object.values(CUBE).forEach(c => {
-    Object.values(c.creatures||{}).forEach(a => n += a.length);
-    Object.values(c.spells||{}).forEach(a => n += a.length);
+    Object.values(c.creatures || {}).forEach(a => n += a.length);
+    Object.values(c.spells    || {}).forEach(a => n += a.length);
   });
   Object.values(MULTICOLOR).forEach(g => n += g.cards.length);
   Object.values(ARTIFACTS).forEach(a => n += a.length);
@@ -1184,10 +1326,9 @@ function countAll() {
   return n;
 }
 
-// Build curve bars
 function buildCurve(containerId, cmcObj, colorKey) {
   const cmcLabels = ['1','2','3','4','5','6+','X'];
-  const counts = cmcLabels.map(k => (cmcObj[k]||[]).length);
+  const counts = cmcLabels.map(k => (cmcObj[k] || []).length);
   const max = Math.max(...counts, 1);
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -1196,8 +1337,7 @@ function buildCurve(containerId, cmcObj, colorKey) {
     wrap.className = 'curve-bar-wrap';
     const bar = document.createElement('div');
     bar.className = 'curve-bar';
-    const pct = Math.round((counts[i]/max) * 52);
-    bar.style.height = (pct || 2) + 'px';
+    bar.style.height = (Math.round((counts[i] / max) * 52) || 2) + 'px';
     bar.style.background = barColor[colorKey] || 'rgba(201,168,76,0.6)';
     const num = document.createElement('div');
     num.className = 'curve-bar-num';
@@ -1205,9 +1345,7 @@ function buildCurve(containerId, cmcObj, colorKey) {
     const lbl = document.createElement('div');
     lbl.className = 'curve-label';
     lbl.textContent = label;
-    wrap.appendChild(bar);
-    wrap.appendChild(num);
-    wrap.appendChild(lbl);
+    wrap.appendChild(bar); wrap.appendChild(num); wrap.appendChild(lbl);
     container.appendChild(wrap);
   });
 }
@@ -1219,34 +1357,29 @@ function renderColor(colorKey, panelId) {
   const data = CUBE[colorKey];
   const panel = document.getElementById(panelId);
 
-  // Creatures
   const creHdr = document.createElement('div');
   creHdr.className = 'section-header';
   creHdr.innerHTML = `<div class="section-title" style="color:${data.accent}">Creatures</div><div class="section-line" style="background:linear-gradient(90deg,${data.accent}44,transparent)"></div>`;
   panel.appendChild(creHdr);
-  const { section: creSection, cards: creCards } = buildCMCSection(data.creatures, data.color, data.label);
+  const { section: creSection, cards: creCards } = buildCMCSection(data.creatures, data.color);
   panel.appendChild(creSection);
   allCards.push(...creCards);
 
-  // Spells
   const spHdr = document.createElement('div');
   spHdr.className = 'section-header';
   spHdr.style.marginTop = '32px';
   spHdr.innerHTML = `<div class="section-title" style="color:${data.accent}">Spells & Planeswalkers</div><div class="section-line" style="background:linear-gradient(90deg,${data.accent}44,transparent)"></div>`;
   panel.appendChild(spHdr);
-  const { section: spSection, cards: spCards } = buildCMCSection(data.spells, data.color, data.label);
+  const { section: spSection, cards: spCards } = buildCMCSection(data.spells, data.color);
   panel.appendChild(spSection);
   allCards.push(...spCards);
 }
 
 function renderMulticolor() {
   const panel = document.getElementById('panel-multicolor');
-  const guilds = Object.entries(MULTICOLOR);
-
   const grid = document.createElement('div');
   grid.className = 'guild-grid';
-
-  guilds.forEach(([key, guild]) => {
+  Object.entries(MULTICOLOR).forEach(([, guild]) => {
     const card = document.createElement('div');
     card.className = 'guild-card';
     const hdr = document.createElement('div');
@@ -1264,13 +1397,12 @@ function renderMulticolor() {
     card.appendChild(body);
     grid.appendChild(card);
   });
-
   panel.appendChild(grid);
 }
 
 function renderArtifacts() {
   const panel = document.getElementById('panel-artifacts');
-  const { section, cards } = buildCMCSection(ARTIFACTS, 'artifact', 'Artifact');
+  const { section, cards } = buildCMCSection(ARTIFACTS, 'artifact');
   panel.appendChild(section);
   allCards.push(...cards);
 }
@@ -1279,19 +1411,17 @@ function renderLands() {
   const panel = document.getElementById('panel-lands');
   const grid = document.createElement('div');
   grid.className = 'guild-grid';
-
   const pairPips = {
     simic:['u','g'], selesnya:['w','g'], golgari:['b','g'], orzhov:['w','b'], azorius:['w','u'],
     boros:['r','w'], rakdos:['b','r'], izzet:['u','r'], gruul:['r','g'], dimir:['u','b'],
     trilands:['w','u','b','r','g']
   };
-
-  Object.entries(LANDS).forEach(([guild, cards]) => {
+  Object.entries(LANDS).forEach(([guildKey, cards]) => {
     const card = document.createElement('div');
     card.className = 'guild-card';
-    const pips = pairPips[guild] || [];
+    const pips = pairPips[guildKey] || [];
     const pipsHtml = pips.map(p => `<div class="pip" style="background:${pipColor[p]}"></div>`).join('');
-    const label = guild.charAt(0).toUpperCase()+guild.slice(1);
+    const label = guildKey.charAt(0).toUpperCase() + guildKey.slice(1);
     const hdr = document.createElement('div');
     hdr.className = 'guild-header';
     hdr.innerHTML = `<span style="font-size:11px">${label}</span><div class="guild-pips">${pipsHtml}</div>`;
@@ -1306,27 +1436,23 @@ function renderLands() {
     card.appendChild(body);
     grid.appendChild(card);
   });
-
   panel.appendChild(grid);
 }
 
 function renderArchetypes() {
   const grid = document.getElementById('archetype-grid');
+  grid.innerHTML = '';
   ARCHETYPES.forEach(arch => {
     const card = document.createElement('div');
     card.className = 'archetype-card';
-    card.style.setProperty('--arch-color', arch.color);
-    card.querySelector = card.querySelector || (() => null);
-
     const stripe = document.createElement('div');
     stripe.style.cssText = `position:absolute;top:0;left:0;right:0;height:3px;background:${arch.color};opacity:0.7`;
     card.appendChild(stripe);
-
     card.innerHTML += `
       <div class="archetype-name">${arch.name}</div>
       <div class="archetype-guild">${arch.guild}</div>
       <div class="archetype-desc">${arch.desc}</div>
-      <div class="archetype-keys">${arch.keys.map(k=>`<span class="key-tag">${k}</span>`).join('')}</div>
+      <div class="archetype-keys">${arch.keys.map(k => `<span class="key-tag">${k}</span>`).join('')}</div>
     `;
     grid.appendChild(card);
   });
@@ -1337,35 +1463,27 @@ function renderFullCurve() {
   const colorKeys = ['w','u','b','r','g'];
   const colorNames = { w:'White', u:'Blue', b:'Black', r:'Red', g:'Green' };
   const colorAccent = { w:'#e8d8b0', u:'#5ab4e8', b:'#9060d0', r:'#e86060', g:'#60cc80' };
-
   colorKeys.forEach(ck => {
-    const data = CUBE[Object.keys(CUBE).find(k => CUBE[k].color===ck)];
+    const data = CUBE[Object.keys(CUBE).find(k => CUBE[k].color === ck)];
     if (!data) return;
     const all = {};
     ['1','2','3','4','5','6+','X'].forEach(cmc => {
-      all[cmc] = [...(data.creatures[cmc]||[]), ...(data.spells[cmc]||[])];
+      all[cmc] = [...(data.creatures[cmc] || []), ...(data.spells[cmc] || [])];
     });
-    const max = Math.max(...Object.values(all).map(a=>a.length), 1);
-
+    const max = Math.max(...Object.values(all).map(a => a.length), 1);
     const card = document.createElement('div');
     card.className = 'curve-card';
     card.innerHTML = `<div class="curve-title"><span style="color:${colorAccent[ck]}">◈</span> ${colorNames[ck]}</div>`;
     const bars = document.createElement('div');
     bars.className = 'curve-bars';
     ['1','2','3','4','5','6+','X'].forEach(cmc => {
-      const count = all[cmc]?.length || 0;
-      const wrap = document.createElement('div');
-      wrap.className = 'curve-bar-wrap';
-      const bar = document.createElement('div');
-      bar.className = 'curve-bar';
-      bar.style.height = Math.max(2, Math.round((count/max)*52))+'px';
+      const count = (all[cmc] || []).length;
+      const wrap = document.createElement('div'); wrap.className = 'curve-bar-wrap';
+      const bar = document.createElement('div'); bar.className = 'curve-bar';
+      bar.style.height = Math.max(2, Math.round((count / max) * 52)) + 'px';
       bar.style.background = barColor[ck];
-      const num = document.createElement('div');
-      num.className = 'curve-bar-num';
-      num.textContent = count||'';
-      const lbl = document.createElement('div');
-      lbl.className = 'curve-label';
-      lbl.textContent = cmc;
+      const num = document.createElement('div'); num.className = 'curve-bar-num'; num.textContent = count || '';
+      const lbl = document.createElement('div'); lbl.className = 'curve-label'; lbl.textContent = cmc;
       wrap.append(bar, num, lbl);
       bars.appendChild(wrap);
     });
@@ -1374,50 +1492,342 @@ function renderFullCurve() {
   });
 }
 
-function renderOverviewList() {
-  const container = document.getElementById('all-cards-list');
-  allCards.forEach(card => {
-    const clone = makeCard(card.dataset.name.replace(/\b\w/g, c=>c.toUpperCase()));
-    clone.dataset.name = card.dataset.name;
-    container.appendChild(clone);
+// ===================== FEATURE 3: IMPORTED ARCHETYPE DISPLAY =====================
+function renderImportedArchetypes(archetypes) {
+  // archetypes: [{name, cards: [{name, cmc, colorIdentity, typeLine, imageUrl}]}]
+  const panel = document.getElementById('panel-archetypes');
+  panel.innerHTML = '';
+
+  archetypes.forEach(arch => {
+    const section = document.createElement('div');
+    section.className = 'arch-section';
+
+    // Header
+    const hdr = document.createElement('div');
+    hdr.className = 'arch-section-header';
+    const totalCards = arch.cards.length;
+    hdr.innerHTML = `
+      <span class="arch-section-gem">◆</span>
+      <span class="arch-section-title">${escapeHtml(arch.name)}</span>
+      <div class="arch-section-line"></div>
+      <span class="arch-section-count">${totalCards} card${totalCards !== 1 ? 's' : ''}</span>
+    `;
+    section.appendChild(hdr);
+
+    // Group cards by CMC for the grid
+    const byBucket = {};
+    arch.cards.forEach(card => {
+      const cmc = card.cmc;
+      let bucket;
+      if (cmc === 0 && card.typeLine && card.typeLine.toLowerCase().includes('land')) {
+        bucket = 'land';
+      } else if (cmc >= 6) {
+        bucket = '6+';
+      } else {
+        bucket = String(Math.floor(cmc)) || '0';
+      }
+      if (!byBucket[bucket]) byBucket[bucket] = [];
+      byBucket[bucket].push(card.name);
+    });
+
+    const { section: cmcSection, cards: newCards } = buildCMCSection(byBucket, 'gold');
+    section.appendChild(cmcSection);
+    allCards.push(...newCards);
+    panel.appendChild(section);
   });
-  document.getElementById('all-count').textContent = allCards.length + ' cards';
-  document.getElementById('total-count').textContent = allCards.length;
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ===================== FEATURE 2: IMPORT PARSER =====================
+function parseImportText(raw) {
+  // Returns { archetypes: [{name, cardNames:[]}], hasArchetypes: bool }
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  const archetypes = [];
+  let current = null;
+  let hasArchetypes = false;
+
+  lines.forEach(line => {
+    if (line.startsWith('#')) {
+      hasArchetypes = true;
+      const name = line.slice(1).trim() || 'Untitled';
+      current = { name, cardNames: [] };
+      archetypes.push(current);
+    } else {
+      // Strip leading count like "1x " or "2 "
+      const cardName = line.replace(/^\d+x?\s+/i, '').trim();
+      if (!cardName) return;
+      if (!current) {
+        // Cards before any header → Unsorted
+        current = { name: 'Unsorted', cardNames: [] };
+        archetypes.push(current);
+      }
+      current.cardNames.push(cardName);
+    }
+  });
+
+  // Deduplicate card names within each archetype
+  archetypes.forEach(a => {
+    a.cardNames = [...new Set(a.cardNames)];
+  });
+
+  return { archetypes, hasArchetypes };
+}
+
+// ===================== IMPORT MODAL LOGIC =====================
+const importOverlay  = document.getElementById('import-overlay');
+const importTextarea = document.getElementById('import-textarea');
+const importSubmit   = document.getElementById('import-submit-btn');
+const importProgress = document.getElementById('import-progress-wrap');
+const importProgBar  = document.getElementById('import-progress-bar');
+const importProgText = document.getElementById('import-progress-text');
+const importProgNums = document.getElementById('import-progress-nums');
+const importFailed   = document.getElementById('import-failed-list');
+const importFailCards= document.getElementById('import-failed-cards');
+
+function openImportModal() {
+  importOverlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  importProgress.classList.remove('visible');
+  importFailed.classList.remove('visible');
+  importSubmit.disabled = false;
+  importProgBar.style.width = '0%';
+}
+
+function closeImportModal() {
+  importOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('import-cube-btn').addEventListener('click', openImportModal);
+document.getElementById('import-close-btn').addEventListener('click', closeImportModal);
+document.getElementById('import-cancel-btn').addEventListener('click', closeImportModal);
+importOverlay.addEventListener('click', e => { if (e.target === importOverlay) closeImportModal(); });
+
+importSubmit.addEventListener('click', async () => {
+  const raw = importTextarea.value.trim();
+  if (!raw) return;
+
+  importSubmit.disabled = true;
+  importProgress.classList.add('visible');
+  importFailed.classList.remove('visible');
+  importProgBar.style.width = '0%';
+  importProgText.textContent = 'Fetching cards from Scryfall…';
+
+  const { archetypes, hasArchetypes } = parseImportText(raw);
+
+  // Collect all unique card names
+  const allNames = [];
+  archetypes.forEach(a => a.cardNames.forEach(n => { if (!allNames.includes(n)) allNames.push(n); }));
+
+  const total = allNames.length;
+  let done = 0;
+  const failed = [];
+
+  importProgNums.textContent = `0 / ${total}`;
+
+  // Fetch all cards sequentially (rate-limited via queue)
+  const fetchPromises = allNames.map(name =>
+    fetchCard(name).then(data => {
+      done++;
+      importProgBar.style.width = Math.round((done / total) * 100) + '%';
+      importProgNums.textContent = `${done} / ${total}`;
+      if (!data) failed.push(name);
+      return { name, data };
+    })
+  );
+
+  await Promise.all(fetchPromises);
+
+  importProgText.textContent = `Done — ${total - failed.length} of ${total} cards found`;
+
+  if (failed.length > 0) {
+    importFailed.classList.add('visible');
+    importFailCards.textContent = failed.join('\n');
+  }
+
+  // Build result: archetypes with resolved card data
+  const resolvedArchetypes = archetypes.map(arch => ({
+    name: arch.name,
+    cards: arch.cardNames
+      .filter(n => cardCache.get(n.toLowerCase()))
+      .map(n => {
+        const d = cardCache.get(n.toLowerCase());
+        return {
+          name: d.name || n,
+          cmc: d.cmc || 0,
+          colorIdentity: d.colorIdentity || [],
+          typeLine: d.typeLine || '',
+          imageUrl: d.imageUrl || null,
+        };
+      }),
+  })).filter(a => a.cards.length > 0);
+
+  // Rebuild the view
+  rebuildWithImportedData(resolvedArchetypes, hasArchetypes, total - failed.length);
+
+  // Close modal after a beat
+  setTimeout(() => {
+    closeImportModal();
+    importSubmit.disabled = false;
+  }, 800);
+});
+
+function rebuildWithImportedData(archetypes, hasArchetypes, cardCount) {
+  // Clear existing allCards tracking (keep existing hardcoded cards in pack pool)
+  allCards = [];
+
+  // Clear color panels
+  ['white','blue','black','red','green','multicolor','artifacts','lands'].forEach(p => {
+    document.getElementById('panel-' + p).innerHTML = '';
+  });
+
+  // Group all imported cards by color identity for the color tabs
+  const byColor = { w:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, u:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, b:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, r:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, g:{'1':[],'2':[],'3':[],'4':[],'5':[],'6+':[],'0':[]}, gold:[], artifact:[], land:[] };
+  const colorAccentMap = { w:'#e8d8b0', u:'#5ab4e8', b:'#9060d0', r:'#e86060', g:'#60cc80' };
+
+  const allImportedCards = [];
+  archetypes.forEach(a => a.cards.forEach(c => {
+    if (!allImportedCards.find(x => x.name === c.name)) allImportedCards.push(c);
+  }));
+
+  allImportedCards.forEach(card => {
+    const ci = card.colorIdentity;
+    const isLand = card.typeLine.toLowerCase().includes('land');
+    const bucket = card.cmc >= 6 ? '6+' : (String(Math.floor(card.cmc)) || '0');
+
+    if (isLand) {
+      byColor.land.push(card.name);
+    } else if (ci.length === 0) {
+      byColor.artifact[bucket] = byColor.artifact[bucket] || [];
+      byColor.artifact[bucket].push(card.name);
+    } else if (ci.length > 1) {
+      byColor.gold.push(card.name);
+    } else {
+      const c = ci[0].toLowerCase();
+      if (byColor[c]) {
+        byColor[c][bucket] = byColor[c][bucket] || [];
+        byColor[c][bucket].push(card.name);
+      }
+    }
+  });
+
+  // Render mono-color panels
+  ['w','u','b','r','g'].forEach(ck => {
+    const panelMap = { w:'panel-white', u:'panel-blue', b:'panel-black', r:'panel-red', g:'panel-green' };
+    const panel = document.getElementById(panelMap[ck]);
+    const hdr = document.createElement('div');
+    hdr.className = 'section-header';
+    hdr.innerHTML = `<div class="section-title" style="color:${colorAccentMap[ck]}">Cards</div><div class="section-line"></div>`;
+    panel.appendChild(hdr);
+    const { section, cards: newCards } = buildCMCSection(byColor[ck], ck);
+    panel.appendChild(section);
+    allCards.push(...newCards);
+  });
+
+  // Multicolor panel
+  const mcPanel = document.getElementById('panel-multicolor');
+  const mcSection = document.createElement('div');
+  mcSection.className = 'color-section';
+  const mcHdr = document.createElement('div');
+  mcHdr.className = 'section-header';
+  mcHdr.innerHTML = `<div class="section-title" style="color:var(--gold)">Multicolor</div><div class="section-line"></div>`;
+  mcSection.appendChild(mcHdr);
+  const mcBody = document.createElement('div');
+  mcBody.className = 'cmc-cards tint-gold';
+  byColor.gold.forEach(name => {
+    const pill = makeCard(name);
+    mcBody.appendChild(pill);
+    allCards.push(pill);
+  });
+  mcSection.appendChild(mcBody);
+  mcPanel.appendChild(mcSection);
+
+  // Artifacts panel
+  const artPanel = document.getElementById('panel-artifacts');
+  const artData = {};
+  Object.entries(byColor.artifact).forEach(([k,v]) => { if (v && v.length) artData[k] = v; });
+  const { section: artSection, cards: artCards } = buildCMCSection(artData, 'artifact');
+  artPanel.appendChild(artSection);
+  allCards.push(...artCards);
+
+  // Lands panel
+  const landsPanel = document.getElementById('panel-lands');
+  const landsSection = document.createElement('div');
+  landsSection.className = 'color-section';
+  const landsBody = document.createElement('div');
+  landsBody.className = 'cmc-cards tint-land';
+  byColor.land.forEach(name => {
+    const pill = makeCard(name);
+    landsBody.appendChild(pill);
+    allCards.push(pill);
+  });
+  landsSection.appendChild(landsBody);
+  landsPanel.appendChild(landsSection);
+
+  // Archetypes panel
+  if (hasArchetypes) {
+    renderImportedArchetypes(archetypes);
+    // Badge the tab
+    const archTab = document.querySelector('.tab[data-tab="archetypes"]');
+    if (archTab && !archTab.querySelector('.tab-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'tab-badge';
+      badge.textContent = 'IMPORTED';
+      archTab.appendChild(badge);
+    }
+    document.getElementById('arch-count').textContent = archetypes.length;
+  } else {
+    renderArchetypes();
+  }
+
+  // Update total count
+  document.getElementById('total-count').textContent = cardCount;
+
+  // Switch to archetypes tab if they were defined, else overview
+  switchTab(hasArchetypes ? 'archetypes' : 'overview');
 }
 
 // ===================== INIT =====================
-renderColor('white','panel-white');
-renderColor('blue','panel-blue');
-renderColor('black','panel-black');
-renderColor('red','panel-red');
-renderColor('green','panel-green');
+renderColor('white',  'panel-white');
+renderColor('blue',   'panel-blue');
+renderColor('black',  'panel-black');
+renderColor('red',    'panel-red');
+renderColor('green',  'panel-green');
 renderMulticolor();
 renderArtifacts();
 renderLands();
 renderArchetypes();
 renderFullCurve();
 
-// Mini curves on overview
+document.getElementById('total-count').textContent = countAll();
+
 ['w','u','b','r','g'].forEach(ck => {
-  const key = Object.keys(CUBE).find(k => CUBE[k].color===ck);
+  const key = Object.keys(CUBE).find(k => CUBE[k].color === ck);
   const data = CUBE[key];
   const combined = {};
   ['1','2','3','4','5','6+','X'].forEach(cmc => {
-    combined[cmc] = [...(data.creatures[cmc]||[]), ...(data.spells[cmc]||[])];
+    combined[cmc] = [...(data.creatures[cmc] || []), ...(data.spells[cmc] || [])];
   });
-  buildCurve('curve-'+ck, combined, ck);
+  buildCurve('curve-' + ck, combined, ck);
 });
-
-renderOverviewList();
 
 // ===================== TABS =====================
 function switchTab(name) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.getElementById('panel-'+name).classList.add('active');
-  event.currentTarget.classList.add('active');
+  const panel = document.getElementById('panel-' + name);
+  const tab   = document.querySelector(`.tab[data-tab="${name}"]`);
+  if (panel) panel.classList.add('active');
+  if (tab)   tab.classList.add('active');
   clearSearch();
 }
+
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+});
 
 // ===================== SEARCH =====================
 const searchInput = document.getElementById('search');
@@ -1425,7 +1835,7 @@ const searchCount = document.getElementById('search-count');
 
 function clearSearch() {
   searchInput.value = '';
-  allCards.forEach(c => { c.classList.remove('match','no-match'); });
+  allCards.forEach(c => c.classList.remove('match','no-match'));
   searchCount.textContent = '';
 }
 
@@ -1433,51 +1843,23 @@ searchInput.addEventListener('input', () => {
   const q = searchInput.value.trim().toLowerCase();
   if (!q) { clearSearch(); return; }
 
-  // Show all panels when searching
   document.querySelectorAll('.panel').forEach(p => p.style.display = 'none');
   document.getElementById('panel-overview').style.display = 'block';
 
   let matches = 0;
   allCards.forEach(c => {
     if (c.dataset.name.includes(q)) {
-      c.classList.add('match');
-      c.classList.remove('no-match');
-      matches++;
+      c.classList.add('match'); c.classList.remove('no-match'); matches++;
     } else {
-      c.classList.remove('match');
-      c.classList.add('no-match');
+      c.classList.remove('match'); c.classList.add('no-match');
     }
   });
-
-  // Also search overview clones
-  document.querySelectorAll('#all-cards-list .card-pill').forEach(c => {
-    if (c.dataset.name.includes(q)) {
-      c.classList.add('match');
-      c.classList.remove('no-match');
-    } else {
-      c.classList.remove('match');
-      c.classList.add('no-match');
-    }
-  });
-
-  searchCount.textContent = `${matches} card${matches!==1?'s':''} found`;
-});
-
-searchInput.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    clearSearch();
-    document.querySelectorAll('.panel').forEach(p => p.style.display='');
-    const active = document.querySelector('.tab.active');
-    const name = active?.getAttribute('onclick')?.match(/'(\w+)'/)?.[1] || 'overview';
-    document.getElementById('panel-'+name).style.display='block';
-  }
+  searchCount.textContent = `${matches} card${matches !== 1 ? 's' : ''} found`;
 });
 
 // ===================== PACK SIMULATOR =====================
 const colorDotMap   = { w:'#e8d8b0', u:'#5ab4e8', b:'#9060d0', r:'#e86060', g:'#60cc80', gold:'#c9a84c', artifact:'#8a9bb0', land:'#8b6930' };
 const colorLabelMap = { w:'White', u:'Blue', b:'Black', r:'Red', g:'Green', gold:'Multicolor', artifact:'Artifact', land:'Land' };
-
-const PACK_MIN_CARDS = 45;
 
 function buildFullCardPool() {
   const pool = [];
@@ -1504,21 +1886,8 @@ function shuffle(arr) {
 let packOpenCount = 0;
 
 function openPack() {
-  const pool = buildFullCardPool();
-  if (pool.length < PACK_MIN_CARDS) {
-    document.getElementById('pack-cards-grid').innerHTML = `
-      <div style="grid-column:1/-1;text-align:center;padding:40px 20px;">
-        <div style="font-family:'Cinzel Decorative',serif;font-size:16px;color:var(--gold);margin-bottom:12px;">Not Enough Cards</div>
-        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);line-height:1.8;">
-          Need at least <strong style="color:var(--text)">${PACK_MIN_CARDS}</strong> cards.
-        </div>
-      </div>`;
-    document.getElementById('pack-count-badge').textContent = 'Not enough cards';
-    document.getElementById('pack-overlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-    return;
-  }
   packOpenCount++;
+  const pool = buildFullCardPool();
   const pack = shuffle(pool).slice(0, 15);
   const grid = document.getElementById('pack-cards-grid');
   grid.innerHTML = '';
@@ -1532,7 +1901,12 @@ function openPack() {
       <div class="pack-card-meta">
         <div class="pack-card-color-dot" style="background:${colorDotMap[card.color] || '#888'}"></div>
         ${colorLabelMap[card.color] || card.color}
-      </div>`;
+      </div>
+    `;
+    item.dataset.cardName = card.name;
+    item.addEventListener('mouseenter', showTooltip);
+    item.addEventListener('mouseleave', hideTooltip);
+    item.addEventListener('mousemove', moveTooltip);
     grid.appendChild(item);
     setTimeout(() => item.classList.add('revealed'), i * 60);
   });
@@ -1553,28 +1927,14 @@ document.getElementById('pack-dismiss-btn').addEventListener('click', closePack)
 document.getElementById('pack-overlay').addEventListener('click', e => {
   if (e.target === document.getElementById('pack-overlay')) closePack();
 });
+
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && document.getElementById('pack-overlay').classList.contains('open')) closePack();
+  if (e.key === 'Escape') {
+    if (document.getElementById('pack-overlay').classList.contains('open')) closePack();
+    if (importOverlay.classList.contains('open')) closeImportModal();
+  }
 });
+
 </script>
-
-<!-- PACK MODAL -->
-<div class="pack-overlay" id="pack-overlay">
-  <div class="pack-modal" id="pack-modal">
-    <div class="pack-modal-header">
-      <div class="pack-modal-title">
-        ✦ Sample Pack
-        <span class="pack-count-badge" id="pack-count-badge">15 cards</span>
-      </div>
-      <button class="pack-close" id="pack-close-btn">✕</button>
-    </div>
-    <div class="pack-cards-grid" id="pack-cards-grid"></div>
-    <div class="pack-modal-footer">
-      <button class="pack-again-btn" id="pack-again-btn">✦ Open Another Pack</button>
-      <button class="pack-dismiss-btn" id="pack-dismiss-btn">Close</button>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
